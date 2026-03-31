@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heating Installation — Kool Life Air & Heat | Houston TX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(217,59,59,0.1) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}.breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge{display:inline-flex;background:rgba(217,59,59,0.1);border:1px solid rgba(217,59,59,0.3);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#E57373;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,76px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:background 0.2s}
+    .btn-outline:hover{background:rgba(255,255,255,0.1)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,3.5vw,52px);line-height:1;letter-spacing:-0.01em;margin-bottom:16px}
+    .card{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:18px;padding:28px;text-align:center}
+    .card .num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#78E205;line-height:1;margin-bottom:8px}
+    .card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65}
+    .features-list{display:flex;flex-direction:column;gap:14px;list-style:none}
+    .features-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6}
+    .check{width:20px;height:20px;border-radius:50%;background:rgba(120,226,5,0.12);border:1px solid rgba(120,226,5,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .system-card{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:18px;padding:28px}
+    .system-card .icon{font-size:36px;margin-bottom:14px}
+    .system-card h3{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:0.03em;margin-bottom:10px}
+    .system-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+    .step{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .step:last-child{border-bottom:none}
+    .step-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#78E205;line-height:1;min-width:40px}
+    .step h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;margin-bottom:6px}
+    .step p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+    .brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .brand-card{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:14px;padding:20px;text-align:center}
+    .brand-card .name{font-weight:700;font-size:15px;margin-bottom:4px}
+    .brand-card .sub{font-size:12px;color:rgba(255,255,255,0.35)}
+    .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/heating.html">Heating</a> › Heating Installation</div>
+    <div class="badge">🔥 &nbsp;HEATING INSTALLATION</div>
+    <h1>HEATING SYSTEM<br><span style="color:#E57373;">INSTALLATION</span></h1>
+    <p class="lead">New furnace, heat pump, or package unit installed by NATE-certified technicians. We right-size your system for your Houston home and back it with a 10-year parts warranty.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="/free-estimates.html" class="btn-primary">Get Free Estimate</a>
+      <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: Types of systems -->
+<!-- Intro with image -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start;margin-bottom:40px">
+      <img src="/BRAND_ASSETS/HEATINGINSTALLATION.png" alt="Heating Installation" style="width:100%;border-radius:16px;object-fit:cover;max-height:340px;" />
+      <div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,2.5vw,36px);color:#6EC6F5;line-height:1.15;margin-bottom:20px;">Expert Installation Services for Heating in Houston, TX</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">At Kool Life Air &amp; Heat, we can install any type of heating system that your home needs. Whether it's a furnace, heat pump, or ductless unit, we offer the finest quality equipment.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;">If you recently moved to Texas, you might question the need for a heating system. But did you know that overnight temperatures can fall close to freezing in winter? Kool Life Air &amp; Heat ensures that you and your family will be cozy when temperatures drop. Plus, you can even enjoy a refreshing swim all year round with one of our pool heaters.</p>
+      </div>
+    </div>
+
+    <div style="max-width:860px;margin-bottom:48px">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,34px);color:#78E205;margin-bottom:16px;">Affordable Solutions</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:32px;">We know that a heating system is a big investment. Our pricing structure is up-front. There are no surprises with our flat rates. Plus, we offer 0% APR financing options to qualified consumers. Talk to us to see how we can fit a heating system installation into your monthly budget.</p>
+
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,34px);color:#78E205;margin-bottom:16px;">Reliable Service</h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Our technicians are as honest as they are skilled in our family-owned business. We'll be at your home within a reliable two-hour window. There's no waiting around and no guesswork when you partner with Kool Life Air &amp; Heat.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;">The service vans at Kool Life Air &amp; Heat are fully stocked and ready to install any heating system you need! We are the authorities on heating in Houston, TX. Our certified technicians are on call to come to your home and install a top quality heating system today, so reach out to schedule your appointment.</p>
+    </div>
+
+    <div style="height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.2),transparent);margin-bottom:48px;"></div>
+  </div>
+</section>
+
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="section-label">WHAT WE INSTALL</div>
+    <h2>ALL TYPES OF <span style="color:#78E205;">HEATING SYSTEMS</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:40px;max-width:640px;line-height:1.75">Houston homeowners don't need the heavy-duty heating systems required up north — but you still need reliable heat for our occasional cold snaps. The right system depends on whether you have gas service, your home's size, and your energy priorities. Here's what we install:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:48px">
+      <div class="system-card">
+        <div class="icon">🔥</div>
+        <h3>Gas Furnaces</h3>
+        <p>Natural gas furnaces are the most common heating system in Houston. They heat fast, work well in extreme cold snaps, and have lower operating costs where gas rates are favorable. We install both 80% and high-efficiency 96%+ AFUE models from all major brands.</p>
+      </div>
+      <div class="system-card">
+        <div class="icon">🔄</div>
+        <h3>Heat Pumps</h3>
+        <p>The ideal choice for most Houston homes — one system handles both cooling and heating year-round. Heat pumps are 2–3x more efficient than electric resistance heating and perfectly suited to our mild Gulf Coast winters. Eligible for federal tax credits.</p>
+      </div>
+      <div class="system-card">
+        <div class="icon">⚡</div>
+        <h3>Electric Air Handlers</h3>
+        <p>Electric air handlers pair with heat pumps to distribute conditioned air through your ductwork. They're also used as standalone backup heat sources. A good option when gas is not available or when going all-electric is the goal.</p>
+      </div>
+      <div class="system-card">
+        <div class="icon">📦</div>
+        <h3>Package Units</h3>
+        <p>All-in-one packaged systems contain the AC and heat in a single outdoor cabinet — common in Houston homes on slab foundations. Available in gas-electric and all-electric heat pump configurations. Easy to service and replace.</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div>
+        <div class="section-label">RIGHT-SIZING YOUR SYSTEM</div>
+        <h2 style="font-size:clamp(28px,2.5vw,40px)">SIZE MATTERS — <span style="color:#78E205;">A LOT</span></h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:24px;line-height:1.75">An oversized heating system short-cycles — it heats too fast, shuts off, and never runs long enough to dehumidify or distribute air evenly. An undersized system runs constantly and still can't keep up. Both are expensive mistakes.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:24px;line-height:1.75">We perform a proper Manual J load calculation before recommending any system. This accounts for your home's square footage, ceiling height, insulation levels, window area, and local climate data — not just a rough estimate.</p>
+        <ul class="features-list">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Manual J load calculation on every install</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Sized for Houston's specific climate zone</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>We won't oversell you a larger system for higher margins</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Duct sizing and airflow analysis included</li>
+        </ul>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="card"><div class="num">FREE</div><p>In-home assessment & load calculation for every estimate</p></div>
+        <div class="card"><div class="num">10yr</div><p>Parts warranty on all new heating equipment we install</p></div>
+        <div class="card"><div class="num">1yr</div><p>Labor warranty covering all installation work we perform</p></div>
+        <div class="card"><div class="num">1 Day</div><p>Most installations completed within one day of your estimate</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Process + Brands -->
+<section style="background:#242B20">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+    <div>
+      <div class="section-label">THE PROCESS</div>
+      <h2>HOW INSTALLATION <span style="color:#78E205;">WORKS</span></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:32px;line-height:1.75">From your first call to the final test, we handle everything. No subcontractors, no surprises — just our own trained technicians from start to finish.</p>
+      <div>
+        <div class="step"><div class="step-num">01</div><div><h3>FREE IN-HOME ESTIMATE</h3><p>We visit your home, inspect your current system and ductwork, calculate your heating load, and present your options in writing — with clear pricing and warranty details.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div><h3>YOU CHOOSE YOUR SYSTEM</h3><p>We recommend 2–3 options at different price and efficiency tiers. You pick what fits your budget and goals. We handle ordering and permits.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div><h3>INSTALLATION DAY</h3><p>Our crew arrives on time, removes and hauls away your old equipment, installs your new system cleanly, and keeps your home clean throughout the job.</p></div></div>
+        <div class="step"><div class="step-num">04</div><div><h3>TESTING & WALK-THROUGH</h3><p>We verify temperatures, check gas pressures or refrigerant charge, test all safety controls, and walk you through the thermostat and filter schedule before we leave.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">BRANDS WE INSTALL</div>
+      <h2>ALL MAJOR <span style="color:#78E205;">BRANDS</span></h2>
+      <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:24px;line-height:1.6">We're certified to install all major heating brands. We'll match you with the right brand and model for your budget and home.</p>
+      <div class="brand-grid" style="margin-bottom:28px">
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">Carrier</div><div class="sub">Industry-leading reliability</div></div>
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">Trane</div><div class="sub">"It's hard to stop a Trane"</div></div>
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">Lennox</div><div class="sub">Ultra-high efficiency options</div></div>
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">Goodman</div><div class="sub">Best value for the money</div></div>
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">Rheem</div><div class="sub">Trusted residential brand</div></div>
+        <div class="brand-card"><div style="font-size:26px;margin-bottom:8px">🏆</div><div class="name">York</div><div class="sub">Durable, dependable systems</div></div>
+      </div>
+      <ul class="features-list">
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Gas furnaces — 80% and 96%+ AFUE models</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Heat pumps — standard and cold-climate models</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Package units — gas-electric and heat pump</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Free removal and disposal of old equipment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="section-label" style="margin-bottom:16px">FREE ESTIMATES</div>
+  <h2 style="margin-bottom:12px">READY FOR A NEW HEATING SYSTEM?</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:32px">Schedule your free in-home estimate today — no obligation, no pressure. We'll find the right system for your Houston home and budget.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <a href="/schedule-service.html" class="btn-primary">Schedule Service</a>
+    <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

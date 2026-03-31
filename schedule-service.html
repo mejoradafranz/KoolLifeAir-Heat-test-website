@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Service — Kool Life Air & Heat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:380px;display:flex;align-items:center;padding:120px 24px 72px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(120,226,5,0.1) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}.breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge{display:inline-flex;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,72px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:16px}
+    .lead{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.65);max-width:560px}
+    section{padding:72px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:14px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,3.5vw,48px);line-height:1;letter-spacing:-0.01em;margin-bottom:14px}
+    .form-card{background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:24px;padding:40px}
+    label{display:block;font-size:12px;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:0.08em;margin-bottom:8px}
+    input,select,textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 16px;font-size:14px;color:#fff;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+    input:focus,select:focus,textarea:focus{border-color:rgba(120,226,5,0.45)}
+    select option{background:#242B20}
+    .btn-primary{width:100%;background:#78E205;color:#1A1F18;font-size:16px;font-weight:700;padding:16px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .step{display:flex;gap:18px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .step:last-child{border-bottom:none}
+    .step-num{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#78E205;line-height:1;min-width:44px}
+    .step h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;margin-bottom:6px}
+    .step p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.65}
+    .contact-box{background:#242B20;border:1px solid rgba(120,226,5,0.12);border-radius:18px;padding:28px}
+    .contact-box a{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-size:16px;font-weight:600;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);transition:color 0.2s}
+    .contact-box a:last-child{border-bottom:none}
+    .contact-box a:hover{color:#78E205}
+    .contact-box .icon{width:40px;height:40px;border-radius:10px;background:rgba(120,226,5,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/contact.html">Contact Us</a> › Schedule Service</div>
+    <div class="badge">📅 &nbsp;SCHEDULE SERVICE</div>
+    <h1>BOOK YOUR<br><span style="color:#78E205;">SERVICE VISIT</span></h1>
+    <p class="lead">Fill out the form and we'll confirm your appointment within 1 hour during business hours. Need it faster? Call us directly.</p>
+  </div>
+</div>
+
+<section style="background:#1A1F18">
+  <div class="container" style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start">
+
+    <!-- Form -->
+    <div class="form-card">
+      <div class="section-label" style="margin-bottom:20px">APPOINTMENT REQUEST</div>
+      <form onsubmit="handleSubmit(event)">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div><label>FIRST NAME</label><input type="text" placeholder="John" required /></div>
+          <div><label>LAST NAME</label><input type="text" placeholder="Smith" required /></div>
+        </div>
+        <div style="margin-bottom:16px"><label>PHONE NUMBER</label><input type="tel" placeholder="(555) 000-0000" required /></div>
+        <div style="margin-bottom:16px"><label>EMAIL ADDRESS</label><input type="email" placeholder="you@email.com" /></div>
+        <div style="margin-bottom:16px">
+          <label>SERVICE TYPE</label>
+          <select required>
+            <option value="">Select a service…</option>
+            <option>AC Repair</option>
+            <option>AC Installation / Replacement</option>
+            <option>Heating Repair</option>
+            <option>Heating Installation</option>
+            <option>Ductless Mini-Split</option>
+            <option>Indoor Air Quality</option>
+            <option>Maintenance Plan</option>
+            <option>Commercial Service</option>
+            <option>Emergency Service</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+          <div><label>PREFERRED DATE</label><input type="date" /></div>
+          <div>
+            <label>PREFERRED TIME</label>
+            <select>
+              <option>Morning (8am–12pm)</option>
+              <option>Afternoon (12pm–5pm)</option>
+              <option>Evening (5pm–8pm)</option>
+              <option>Any Time</option>
+            </select>
+          </div>
+        </div>
+        <div style="margin-bottom:24px"><label>DESCRIBE YOUR ISSUE (OPTIONAL)</label><textarea rows="4" placeholder="Tell us what's going on with your system…"></textarea></div>
+        <button type="submit" class="btn-primary" id="submit-btn">Schedule My Service →</button>
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px">We'll confirm your appointment within 1 hour during business hours.</p>
+      </form>
+      <div id="success-msg" style="display:none;text-align:center;padding:40px 0">
+        <div style="font-size:56px;margin-bottom:16px">✅</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#78E205;margin-bottom:8px">YOU'RE ALL SET!</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65)">We received your request and will confirm your appointment shortly.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div>
+        <div class="section-label">WHAT TO EXPECT</div>
+        <h2>SIMPLE AS <span style="color:#78E205;">1-2-3</span></h2>
+        <div style="margin-top:16px">
+          <div class="step"><div class="step-num">01</div><div><h3>SUBMIT YOUR REQUEST</h3><p>Fill out the form with your details and preferred time window.</p></div></div>
+          <div class="step"><div class="step-num">02</div><div><h3>WE CONFIRM</h3><p>We'll call or text within 1 hour to confirm your appointment time.</p></div></div>
+          <div class="step"><div class="step-num">03</div><div><h3>TECH ARRIVES ON TIME</h3><p>Your certified technician arrives on time and ready to work.</p></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">PREFER TO CALL?</div>
+        <div class="contact-box">
+          <a href="tel:+13212076757"><span class="icon">📞</span><div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.06em;margin-bottom:3px">24/7 PHONE</div>321-207-6757</div></a>
+          <a href="mailto:info@koollifeairandheat.com"><span class="icon">✉️</span><div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.06em;margin-bottom:3px">EMAIL US</div>info@koollifeairandheat.com</div></a>
+        </div>
+      </div>
+
+      <div style="background:rgba(217,59,59,0.08);border:1px solid rgba(217,59,59,0.2);border-radius:16px;padding:24px;text-align:center">
+        <div style="font-size:32px;margin-bottom:10px">🚨</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#E57373;margin-bottom:8px">HVAC EMERGENCY?</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:16px;line-height:1.6">Don't wait — call our emergency line for immediate dispatch.</p>
+        <a href="tel:+13212076757" style="display:block;background:#D93B3B;color:#fff;font-size:14px;font-weight:700;padding:12px;border-radius:10px;text-decoration:none">📞 Emergency Line</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('submit-btn').textContent='Sending…';
+  setTimeout(()=>{
+    e.target.style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  },800);
+}
+</script>
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

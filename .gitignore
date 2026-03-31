@@ -1,0 +1,13 @@
+# Dev tools
+serve.mjs
+screenshot.mjs
+screenshot-crop.mjs
+mobile-screenshot.mjs
+start-server.bat
+
+# Temp files
+temporary screenshots/
+CLAUDE WEB DESIGN.md
+
+# Node
+node_modules/

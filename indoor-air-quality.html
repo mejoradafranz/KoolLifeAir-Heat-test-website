@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indoor Air Quality — Kool Life Air & Heat | Houston TX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(120,226,5,0.08) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}.breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge{display:inline-flex;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,84px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:18px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-0.01em;margin-bottom:16px}
+    .subpage-card{display:flex;flex-direction:column;background:#242B20;border:1px solid rgba(120,226,5,0.12);border-radius:20px;padding:36px;text-decoration:none;color:#fff;transition:transform 0.25s,border-color 0.25s}
+    .subpage-card:hover{transform:translateY(-4px);border-color:rgba(120,226,5,0.35)}
+    .subpage-card .icon{font-size:44px;margin-bottom:20px}
+    .subpage-card span{font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.08em;margin-bottom:10px}
+    .subpage-card h3{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.02em;margin-bottom:12px}
+    .subpage-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;flex:1}
+    .subpage-card .arrow{margin-top:20px;font-size:13px;font-weight:600;color:#78E205}
+    .stat{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;padding:28px;text-align:center}
+    .stat .num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:#78E205;line-height:1;margin-bottom:8px}
+    .stat p{font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6}
+    .problem-row{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .problem-row:last-child{border-bottom:none}
+    .problem-row .icon{font-size:28px;flex-shrink:0;margin-top:2px}
+    .problem-row h3{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.03em;margin-bottom:6px}
+    .problem-row p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65}
+    .features-list{display:flex;flex-direction:column;gap:14px;list-style:none}
+    .features-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6}
+    .check{width:20px;height:20px;border-radius:50%;background:rgba(120,226,5,0.12);border:1px solid rgba(120,226,5,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Indoor Air Quality</div>
+    <div class="badge">🌿 &nbsp;INDOOR AIR QUALITY</div>
+    <h1>BREATHE CLEANER,<br><span style="color:#78E205;">HEALTHIER AIR</span></h1>
+    <p class="lead">The air inside your Houston home can be 2–5x more polluted than outdoor air. Our indoor air quality solutions eliminate allergens, bacteria, viruses, mold, and humidity — so your family breathes easier every day.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="/schedule-service.html" class="btn-primary">Schedule Assessment</a>
+      <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+    </div>
+  </div>
+</div>
+
+<!-- Banner image -->
+<div style="width:100%;overflow:hidden;max-height:420px;line-height:0">
+  <img src="/BRAND_ASSETS/IndoorAirQuality.png" alt="Indoor Air Quality Service" style="width:100%;height:420px;object-fit:cover;object-position:center;" />
+</div>
+
+<!-- Intro content below banner -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,2.5vw,36px);color:#6EC6F5;margin-bottom:16px;">Optimize Your Indoor Air Quality in Houston, TX</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:40px;">Your home is your sanctuary, and you want the air you breathe to be clean. Kool Life Air &amp; Heat understands how crucial air quality is to a healthy home. We optimize your indoor air quality in Houston, TX.</p>
+
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,34px);color:#78E205;margin-bottom:16px;">Products for Indoor Air Quality</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Here are three of our most popular indoor air quality products:</p>
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;max-width:640px">
+      <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#78E205;font-size:18px;flex-shrink:0;line-height:1.3;">•</span>Whole-house air filter</li>
+      <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#78E205;font-size:18px;flex-shrink:0;line-height:1.3;">•</span>Central air purification system</li>
+      <li style="display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6;"><span style="color:#78E205;font-size:18px;flex-shrink:0;line-height:1.3;">•</span>Ultraviolet lamps</li>
+    </ul>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Consider investing in a whole-house air filter for your home. These special filters are 100 times more effective than a regular filter. Neatly fitting into the ductwork of your HVAC system, a whole-house air filter removes stubborn contaminants. Ask our specialists about these filters and the Trane CleanEffects Air Cleaner.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Does anyone in your household suffer from allergies or other respiratory conditions? Central air purification systems are another tool to maximize your indoor air quality. Our purification systems trap nasty contaminants before they can circulate through your home. Allergy sufferers and the whole family will breathe a sigh of relief.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:40px;">Finally, ultraviolet light installation can reduce the germ count in your household. UV lamps work not only for air pollutants but also for germs clinging to surfaces. These lights are ideal for homes with children and pets.</p>
+
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,34px);color:#78E205;margin-bottom:16px;">Cleaner Air</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;">Kool Life Air &amp; Heat carries a wide array of products to optimize your indoor air quality. Our skilled technicians are standing by to offer a free estimate and get started on purifying your environment.</p>
+
+    <div style="height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.2),transparent);margin:48px 0;"></div>
+
+    <!-- Service rows + promo card -->
+    <div style="display:grid;grid-template-columns:1fr 260px;gap:24px;align-items:start;">
+
+      <!-- Rows -->
+      <div style="display:flex;flex-direction:column;gap:16px">
+
+        <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:16px;overflow:hidden;transition:border-color 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.15)'">
+          <div style="padding:32px 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;border-right:1px solid rgba(255,255,255,0.05)">
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;color:#fff;">Air Purification Systems</h3>
+            <a href="/air-purification.html" style="display:inline-block;background:#D93B3B;color:#fff;font-size:14px;font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none;transition:box-shadow 0.25s,transform 0.2s;" onmouseover="this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='none'">Learn More</a>
+          </div>
+          <div style="padding:32px 36px;display:flex;flex-direction:column;justify-content:center;gap:10px">
+            <p style="font-size:15px;font-weight:700;color:#78E205;line-height:1.4;">Kool Life Air &amp; Heat provides services for the best indoor air quality in Houston, TX.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75;">An air purification system is an excellent way to facilitate a healthier home. We offer two main systems to purify the air in your home; Whole-house air filter, Central air purification system.</p>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:16px;overflow:hidden;transition:border-color 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.15)'">
+          <div style="padding:32px 24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:16px;border-right:1px solid rgba(255,255,255,0.05)">
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;color:#fff;">Ultraviolet Lights</h3>
+            <a href="/ultraviolet-lights.html" style="display:inline-block;background:#D93B3B;color:#fff;font-size:14px;font-weight:700;padding:11px 22px;border-radius:8px;text-decoration:none;transition:box-shadow 0.25s,transform 0.2s;" onmouseover="this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.transform='none'">Learn More</a>
+          </div>
+          <div style="padding:32px 36px;display:flex;flex-direction:column;justify-content:center;gap:10px">
+            <p style="font-size:15px;font-weight:700;color:#78E205;line-height:1.4;">Optimize your indoor air quality in Houston, TX, with state-of-the-art UV lights.</p>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75;">Now more than ever, you need to guard your home against germs from viruses and other contaminants. Your indoor air quality can skyrocket when Kool Life Air &amp; Heat installs ultraviolet lights.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Promo card -->
+      <div id="iaq-promo-card" style="background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:sticky;top:100px;transition:transform 0.3s ease,box-shadow 0.3s ease;">
+        <div style="padding:24px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;border-radius:12px;" />
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;line-height:1.2;margin-bottom:12px;">Air Conditioning<br>Heating<br>Indoor Air Quality</div>
+          <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;width:100%;">
+            <div style="font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#D93B3B;font-weight:700;">✓</span> Installation</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#D93B3B;font-weight:700;">✓</span> Repair</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#D93B3B;font-weight:700;">✓</span> Maintenance</div>
+          </div>
+        </div>
+        <a href="tel:+13212076757" style="display:block;background:#78E205;color:#1A1F18;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:0.08em;padding:18px;text-align:center;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#8fff10'" onmouseout="this.style.background='#78E205'">
+          CALL TODAY!<br>
+          <span style="font-family:'Inter',sans-serif;font-size:10px;font-weight:400;color:rgba(0,0,0,0.5);letter-spacing:0;">applies to qualifying equipment contact for details*</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: Why IAQ matters + Houston-specific -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:64px">
+      <div class="stat"><div class="num">5x</div><p>Indoor air can be up to 5x more polluted than outdoor air, according to the EPA</p></div>
+      <div class="stat"><div class="num">90%</div><p>Of time the average American spends indoors — where air quality matters most</p></div>
+      <div class="stat"><div class="num">99%</div><p>Of airborne particles removed by our advanced HEPA and media filtration systems</p></div>
+      <div class="stat"><div class="num">UV</div><p>Germicidal light technology kills 99.9% of bacteria, viruses, and mold spores</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div>
+        <div class="section-label">WHY IT MATTERS IN HOUSTON</div>
+        <h2>THE HOUSTON <span style="color:#78E205;">IAQ PROBLEM</span></h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:24px;line-height:1.75">Houston's hot, humid climate creates a perfect environment for indoor air quality problems. High humidity encourages mold and mildew growth. Long AC seasons mean your home is sealed up for months, recycling the same air over and over. And the region's air is loaded with pollutants, allergens, and industrial pollutants from one of the country's largest petrochemical corridors.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;line-height:1.75">If you or anyone in your household experiences frequent allergies, asthma attacks, headaches, fatigue, or respiratory irritation, poor indoor air quality could be the cause — not just seasonal allergies.</p>
+        <div>
+          <div class="problem-row"><div class="icon">💧</div><div><h3>Houston Humidity</h3><p>Relative humidity above 60% promotes mold growth, dust mites, and musty odors. Houston homes often run 70–80% humidity without proper dehumidification. Our solutions bring that under control.</p></div></div>
+          <div class="problem-row"><div class="icon">🌸</div><div><h3>Year-Round Allergens</h3><p>Houston's warm climate means allergen season essentially never ends. Mountain cedar, oak, ragweed, and grass pollen cycle through most of the year. Our filtration systems trap allergens before they reach you.</p></div></div>
+          <div class="problem-row"><div class="icon">🏭</div><div><h3>VOCs & Pollutants</h3><p>Off-gassing from furniture, carpets, cleaning products, paint, and cooking builds up in a sealed home. Advanced filtration and air purification systems capture these chemical pollutants continuously.</p></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-label">HEALTH BENEFITS</div>
+        <h2>BETTER AIR, <span style="color:#78E205;">BETTER HEALTH</span></h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;line-height:1.75">Improving your home's air quality has immediate and lasting health benefits for every member of your household — especially children, the elderly, and anyone with respiratory conditions.</p>
+        <ul class="features-list">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Fewer allergy and asthma attacks at home</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Better sleep quality — cleaner air, deeper rest</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Reduced spread of illness throughout the household</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Less dust accumulation on surfaces</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Eliminates musty odors from mold and mildew</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Protects infants, elderly, and immunocompromised family members</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Improved mental clarity and daytime energy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Our IAQ Solutions -->
+<section style="background:#242B20">
+  <div class="container">
+    <div class="section-label">OUR IAQ SOLUTIONS</div>
+    <h2>CLEANER AIR <span style="color:#78E205;">STARTS HERE</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:36px;max-width:600px;line-height:1.75">We offer a complete range of indoor air quality solutions — from whole-home air purifiers to UV germicidal lights and whole-home dehumidifiers. Every solution integrates directly with your existing HVAC system for whole-home coverage without portable units cluttering your rooms.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <a href="/air-purification.html" class="subpage-card">
+        <div class="icon">🌬️</div>
+        <span>AIR PURIFICATION</span>
+        <h3>Air Purification Systems</h3>
+        <p>Whole-home air purifiers that connect directly to your HVAC ductwork, eliminating dust, pollen, pet dander, mold spores, bacteria, viruses, and VOCs from every room in your home — automatically, silently, 24/7.</p>
+        <div class="arrow">Learn More →</div>
+      </a>
+      <a href="/ultraviolet-lights.html" class="subpage-card">
+        <div class="icon">💡</div>
+        <span>UV TECHNOLOGY</span>
+        <h3>Ultraviolet Germicidal Lights</h3>
+        <p>UV-C light systems installed inside your HVAC air handler that kill bacteria, viruses, mold, and other biological contaminants before they recirculate through your home. The same technology used in hospitals and clean rooms.</p>
+        <div class="arrow">Learn More →</div>
+      </a>
+    </div>
+    <div style="background:rgba(120,226,5,0.04);border:1px solid rgba(120,226,5,0.12);border-radius:18px;padding:36px;margin-top:24px">
+      <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:24px;color:#78E205;margin-bottom:10px">WHOLE-HOME DEHUMIDIFICATION</div>
+          <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75">Houston humidity is relentless. A whole-home dehumidifier installed in your HVAC system removes excess moisture from every room simultaneously — preventing mold growth, reducing allergens, and making 76°F feel more comfortable than 70°F without humidity. Ask us about adding dehumidification to your system.</p>
+        </div>
+        <a href="/schedule-service.html" class="btn-primary" style="white-space:nowrap">Ask About Dehumidifiers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="section-label" style="margin-bottom:16px">FREE ASSESSMENT</div>
+  <h2 style="margin-bottom:12px">READY FOR CLEANER AIR?</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:32px">Schedule a free in-home air quality assessment and find out what's really in the air your family breathes every day.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <a href="/schedule-service.html" class="btn-primary">Schedule Assessment</a>
+    <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+<script>
+  const card = document.getElementById('iaq-promo-card');
+  if (card) {
+    let lastScroll = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const delta = window.scrollY - lastScroll;
+      const lift = Math.min(Math.abs(delta) * 0.4, 10);
+      const direction = delta > 0 ? -1 : 1;
+      card.style.transform = `translateY(${direction * lift}px)`;
+      card.style.boxShadow = `0 ${8 + lift}px ${24 + lift * 2}px rgba(120,226,5,0.15)`;
+      clearTimeout(card._scrollTimer);
+      card._scrollTimer = setTimeout(() => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'none';
+      }, 120);
+      lastScroll = window.scrollY;
+    });
+  }
+</script>
+</body>
+</html>

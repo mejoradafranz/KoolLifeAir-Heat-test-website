@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Conditioning Services — Kool Life Air & Heat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(110,198,245,0.12) 0%,transparent 70%),#1A1F18}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(110,198,245,0.1);border:1px solid rgba(110,198,245,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#6EC6F5;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,84px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:18px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;align-items:center;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(30px,3.5vw,48px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:16px}
+    h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.02em;margin-bottom:10px}
+
+    /* Intro section */
+    .intro-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+    .intro-img{width:100%;border-radius:16px;object-fit:cover;aspect-ratio:4/3;background:#1a1f1a;display:flex;align-items:center;justify-content:center;font-size:80px;overflow:hidden}
+    .intro-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,42px);color:#6EC6F5;line-height:1.1;margin-bottom:20px}
+    .intro-body p{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:14px}
+
+    /* Advantages section */
+    .adv-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin:20px 0 24px}
+    .adv-list li{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6}
+    .adv-list li::before{content:'•';color:#78E205;font-size:20px;line-height:1.2;flex-shrink:0}
+    .service-areas-text{font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-top:16px}
+    .service-areas-text strong{color:#78E205}
+
+    /* CTA Form band */
+    .cta-form-band{background:linear-gradient(135deg,#8B0000,#6B0000);padding:64px 24px;text-align:center}
+    .cta-form-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(26px,3vw,38px);color:#fff;margin-bottom:8px;letter-spacing:0.01em}
+    .cta-form-band .sub{font-size:16px;color:rgba(255,255,255,0.75);margin-bottom:6px}
+    .cta-form-band .phone-line{font-size:18px;font-weight:700;color:#fff;margin-bottom:28px}
+    .cta-form-band .phone-line a{color:#fff;text-decoration:none}
+    .form-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;max-width:900px;margin:0 auto 12px}
+    .form-row input{background:#fff;color:#222;border:none;border-radius:6px;padding:13px 14px;font-size:14px;font-family:'Inter',sans-serif;width:100%}
+    .form-full{max-width:900px;margin:0 auto 12px}
+    .form-full textarea{background:#fff;color:#222;border:none;border-radius:6px;padding:13px 14px;font-size:14px;font-family:'Inter',sans-serif;width:100%;resize:vertical;min-height:80px}
+    .form-note{font-size:12px;color:rgba(255,255,255,0.45);max-width:900px;margin:0 auto 20px;text-align:left}
+    .btn-submit{background:#fff;color:#8B0000;font-size:15px;font-weight:700;padding:14px 48px;border-radius:8px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background 0.2s}
+    .btn-submit:hover{background:#f0f0f0}
+
+    /* Testimonial band */
+    .testimonial-band{background:#f5f5f0;padding:60px 24px;text-align:center;color:#222}
+    .testimonial-band blockquote{font-size:18px;font-style:italic;line-height:1.7;max-width:680px;margin:24px auto 16px;color:#333}
+    .testimonial-band blockquote::before{content:'\201C';font-size:56px;color:#8B0000;line-height:0;vertical-align:-24px;margin-right:4px}
+    .testimonial-band blockquote::after{content:'\201D';font-size:56px;color:#8B0000;line-height:0;vertical-align:-24px;margin-left:4px}
+    .stars-red{color:#D93B3B;font-size:22px;letter-spacing:3px;margin:12px 0}
+    .reviewer-name{font-weight:700;font-size:14px;color:#333}
+    .reviewer-source{font-size:12px;color:#888;margin-top:4px}
+    .btn-review{display:inline-block;background:#8B0000;color:#fff;font-size:15px;font-weight:700;padding:14px 36px;border-radius:8px;text-decoration:none;margin-top:20px}
+    .btn-review:hover{background:#6B0000}
+    .brand-logos{display:flex;align-items:center;justify-content:center;gap:48px;margin-top:40px;flex-wrap:wrap}
+    .brand-badge{display:flex;flex-direction:column;align-items:center;gap:8px}
+    .brand-badge img,.brand-placeholder{height:64px;object-fit:contain}
+    .brand-placeholder{display:flex;align-items:center;justify-content:center;background:#e8e8e8;border-radius:8px;padding:12px 24px;font-weight:800;font-size:22px;color:#444;letter-spacing:0.05em}
+
+    /* Service Areas grid */
+    .areas-band{background:#1a2540;padding:60px 24px;text-align:center}
+    .areas-band h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,40px);color:#fff;margin-bottom:32px}
+    .areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 0;max-width:600px;margin:0 auto}
+    .areas-grid a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:15px;padding:6px 0;transition:color 0.2s}
+    .areas-grid a:hover{color:#78E205}
+
+    @media(max-width:768px){
+      .intro-grid{grid-template-columns:1fr}
+      .form-row{grid-template-columns:1fr 1fr}
+      .areas-grid{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<!-- Hero -->
+<div class="page-hero">
+  <div class="container">
+    <div class="badge">❄️ &nbsp;AIR CONDITIONING</div>
+    <h1>KEEP YOUR HOME<br><span style="color:#6EC6F5;">PERFECTLY COOL</span></h1>
+    <p class="lead">From new AC installations to emergency repairs, Kool Life delivers expert cooling solutions for Houston homes and businesses — fast, reliable, and always at a fair price.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="/schedule-service.html" class="btn-primary">Schedule Service</a>
+      <a href="/free-estimates.html" class="btn-outline">Get Free Estimate</a>
+    </div>
+  </div>
+</div>
+
+<!-- Intro: Expert Installation -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="intro-grid">
+      <img src="/BRAND_ASSETS/AIRCONDITIONING.png" alt="Kool Life Air Conditioning Technician" style="width:100%;border-radius:16px;object-fit:cover;" />
+      <div class="intro-body">
+        <h2 class="intro-title">The Experts for Professional Air Conditioning Service in Houston, TX</h2>
+        <p>When the heat index reaches 105 degrees in Houston, you need your air conditioner to do its job. At Kool Life Air & Heat, our team will work to keep your air conditioner in optimal shape with our expert repair and maintenance services.</p>
+        <p>Need a system overhaul? We can install a state-of-the-art air conditioner to keep your home breezy cool.</p>
+        <p><strong style="color:#78E205;">Maintenance</strong><br>Did you know that keeping your air conditioner properly maintained can benefit your health? Cool air is just the beginning. Clean air is equally vital. Our maintenance services support a healthy home environment for you and your loved ones. Breathe easier knowing that your HVAC system is in optimal condition.</p>
+        <p>Whatever product or service you choose, we won't be satisfied until you are. You can count on a follow-up call from one of our professional team members. We want to make sure that you are 100% satisfied with the workmanship we've delivered. Air conditioning repair, air conditioning installation, and more — we do it all at Kool Life Air & Heat.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Service Rows -->
+<section style="background:#1A1F18;padding:72px 24px;">
+  <div class="container" style="max-width:1100px;display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start;">
+
+  <!-- Promo Card -->
+  <div style="grid-column:2;grid-row:1/6;position:sticky;top:90px;background:linear-gradient(160deg,#1a1f2e,#242B20);border:1px solid rgba(120,226,5,0.15);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <div style="background:linear-gradient(160deg,#1e2535,#161b28);padding:32px 24px 20px;width:100%;display:flex;flex-direction:column;align-items:center;gap:16px;">
+      <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life Air & Heat" style="width:90px;height:90px;object-fit:contain;border-radius:14px;" />
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;line-height:1.3;letter-spacing:0.03em;">Air Conditioning<br>Heating<br>Indoor Air Quality</div>
+      <div style="display:flex;flex-direction:column;gap:8px;width:100%;text-align:left;">
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#78E205;font-weight:700;">✓</span> Installation</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#78E205;font-weight:700;">✓</span> Repair</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.75);"><span style="color:#78E205;font-weight:700;">✓</span> Maintenance</div>
+      </div>
+    </div>
+    <a href="tel:+13212076757" style="display:block;width:100%;background:#78E205;color:#1A1F18;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.08em;padding:18px;text-decoration:none;transition:background 0.2s,box-shadow 0.2s;" onmouseover="this.style.background='#8fff20';this.style.boxShadow='0 0 24px rgba(120,226,5,0.5)'" onmouseout="this.style.background='#78E205';this.style.boxShadow='none'">
+      CALL TODAY!
+    </a>
+    <div style="background:#78E205;width:100%;padding:0 16px 10px;text-align:center;">
+      <div style="font-size:10px;color:rgba(0,0,0,0.5);">applies to qualifying equipment contact for details*</div>
+    </div>
+  </div>
+
+  <div style="grid-column:1;display:flex;flex-direction:column;gap:16px;">
+
+    <!-- AC Installation -->
+    <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.35)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.1)';this.style.boxShadow='none'">
+      <div style="background:#0d1210;border-right:1px solid rgba(120,226,5,0.1);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.03em;line-height:1.2;">Air Conditioning<br>Installation</div>
+        <a href="/ac-installation.html" style="display:block;background:#8B0000;color:#fff;font-size:14px;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;width:100%;text-align:center;transition:background 0.2s,box-shadow 0.2s,transform 0.2s;" onmouseover="this.style.background='#a00000';this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#8B0000';this.style.boxShadow='none';this.style.transform='translateY(0)'">Learn More</a>
+      </div>
+      <div style="padding:28px 32px;">
+        <div style="font-size:15px;font-weight:700;color:#78E205;margin-bottom:10px;line-height:1.4;">Kool Life Air & Heat provides the most reliable air conditioning service in Houston, TX and the surrounding areas.</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;">Is your old air conditioner in need of an upgrade? Don't wait until the temperature is sizzling to get a new one. Kool Life Air & Heat offers fast and efficient service to ensure that you don't have to spend one minute in a stifling home.</p>
+      </div>
+    </div>
+
+    <!-- AC Repair -->
+    <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.35)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.1)';this.style.boxShadow='none'">
+      <div style="background:#0d1210;border-right:1px solid rgba(120,226,5,0.1);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.03em;line-height:1.2;">Air Conditioning<br>Repair</div>
+        <a href="/ac-repair.html" style="display:block;background:#8B0000;color:#fff;font-size:14px;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;width:100%;text-align:center;transition:background 0.2s,box-shadow 0.2s,transform 0.2s;" onmouseover="this.style.background='#a00000';this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#8B0000';this.style.boxShadow='none';this.style.transform='translateY(0)'">Learn More</a>
+      </div>
+      <div style="padding:28px 32px;">
+        <div style="font-size:15px;font-weight:700;color:#78E205;margin-bottom:10px;line-height:1.4;">Kool Life Air & Heat provides expert air conditioning repair in Houston, TX, and nearby communities.</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;">The last thing a Houston homeowner wants is to be without air conditioning in 90-degree weather. Kool Life Air & Heat knows that an air conditioner breakdown during the height of the summer is urgent!</p>
+      </div>
+    </div>
+
+    <!-- Ductless Mini-Splits -->
+    <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.35)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.1)';this.style.boxShadow='none'">
+      <div style="background:#0d1210;border-right:1px solid rgba(120,226,5,0.1);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.03em;line-height:1.2;">Ductless<br>Mini-Splits</div>
+        <a href="/ductless-mini-splits.html" style="display:block;background:#8B0000;color:#fff;font-size:14px;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;width:100%;text-align:center;transition:background 0.2s,box-shadow 0.2s,transform 0.2s;" onmouseover="this.style.background='#a00000';this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#8B0000';this.style.boxShadow='none';this.style.transform='translateY(0)'">Learn More</a>
+      </div>
+      <div style="padding:28px 32px;">
+        <div style="font-size:15px;font-weight:700;color:#78E205;margin-bottom:10px;line-height:1.4;">Want to upgrade your AC with a ductless mini split in Houston, TX or the surrounding area?</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;">Do you want to save money on your electric bill? Would you also like more control over the climate in your home? Ductless mini splits are an energy-efficient solution for a Houston homeowner. Installation is easy and systems give you total control over your home's climate.</p>
+      </div>
+    </div>
+
+    <!-- Heat Pumps -->
+    <div style="display:grid;grid-template-columns:220px 1fr;background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;overflow:hidden;transition:border-color 0.25s,box-shadow 0.25s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.35)';this.style.boxShadow='0 8px 32px rgba(0,0,0,0.4)'" onmouseout="this.style.borderColor='rgba(120,226,5,0.1)';this.style.boxShadow='none'">
+      <div style="background:#0d1210;border-right:1px solid rgba(120,226,5,0.1);padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.03em;line-height:1.2;">Heat Pumps</div>
+        <a href="/heat-pumps.html" style="display:block;background:#8B0000;color:#fff;font-size:14px;font-weight:700;padding:11px 24px;border-radius:8px;text-decoration:none;width:100%;text-align:center;transition:background 0.2s,box-shadow 0.2s,transform 0.2s;" onmouseover="this.style.background='#a00000';this.style.boxShadow='0 0 18px rgba(217,59,59,0.7)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#8B0000';this.style.boxShadow='none';this.style.transform='translateY(0)'">Learn More</a>
+      </div>
+      <div style="padding:28px 32px;">
+        <div style="font-size:15px;font-weight:700;color:#78E205;margin-bottom:10px;line-height:1.4;">Kool Life Air & Heat is ready to enhance your home with a heat pump in Houston, TX, and the surrounding areas.</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75;">When the Texas weather starts to cool down, a heat pump warms your home. During the long hot season, the heat pump works with an efficient push-pull motion. The heat pump pulls warm air out of your home and pushes it outdoors. The result is a comfortable home all year long.</p>
+      </div>
+    </div>
+
+  </div><!-- end inner flex column -->
+
+  </div><!-- end grid -->
+</section>
+
+<!-- CTA Contact Form -->
+<div class="cta-form-band">
+  <h2>Ready to schedule your air conditioning service in Houston, TX?</h2>
+  <p class="sub">Contact Kool Life Air & Heat today.</p>
+  <p class="phone-line">by calling <a href="tel:+13212076757">321-207-6757,</a></p>
+  <p style="font-size:14px;color:rgba(255,255,255,0.75);margin-bottom:24px">or fill out the form below and we will be in contact with you in one business day</p>
+
+  <form onsubmit="handleSubmit(event)">
+    <div class="form-row">
+      <input type="text" placeholder="First Name*" required />
+      <input type="text" placeholder="Last Name" />
+      <input type="tel" placeholder="Phone" />
+      <input type="email" placeholder="Email*" required />
+    </div>
+    <div class="form-full">
+      <textarea placeholder="How can we help?*" required></textarea>
+    </div>
+    <p class="form-note">This site is protected by reCAPTCHA. Google's Privacy Policy and Terms of Service apply.</p>
+    <button type="submit" class="btn-submit" id="submit-btn">Submit</button>
+  </form>
+  <div id="success-msg" style="display:none;margin-top:24px">
+    <div style="font-size:48px;margin-bottom:12px">✅</div>
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.05em">MESSAGE RECEIVED!</div>
+    <p style="font-size:15px;color:rgba(255,255,255,0.7);margin-top:8px">We'll be in touch within one business day.</p>
+  </div>
+</div>
+
+<!-- Testimonial -->
+<div class="testimonial-band">
+  <div style="display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap">
+    <div style="font-size:40px;color:#ccc;cursor:pointer;user-select:none">&#8249;</div>
+    <div>
+      <blockquote>Absolutely trust Kool Life Air & Heat for all my HVAC needs. They are very punctual, professional and very knowledgeable. I would not call any other company.</blockquote>
+      <div class="stars-red">★★★★★</div>
+      <div class="reviewer-name">Robert H.</div>
+      <div class="reviewer-source">via Google</div>
+    </div>
+    <div style="font-size:40px;color:#ccc;cursor:pointer;user-select:none">&#8250;</div>
+  </div>
+  <a href="/review-us.html" class="btn-review">Review Us</a>
+
+</div>
+
+<!-- Service Areas -->
+<div class="areas-band">
+  <h2>Do We Serve Your Area?</h2>
+  <div class="areas-grid">
+    <a href="/service-areas.html">Houston</a>
+    <a href="/service-areas.html">Sugar Land</a>
+    <a href="/service-areas.html">The Woodlands</a>
+    <a href="/service-areas.html">Katy</a>
+    <a href="/service-areas.html">Pearland</a>
+    <a href="/service-areas.html">Missouri City</a>
+    <a href="/service-areas.html">Friendswood</a>
+    <a href="/service-areas.html">Cypress</a>
+    <a href="/service-areas.html">League City</a>
+  </div>
+</div>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('submit-btn').textContent='Sending…';
+  setTimeout(()=>{
+    e.target.style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  },800);
+}
+</script>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

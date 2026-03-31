@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Plan — Kool Life Air & Heat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(120,226,5,0.1) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .badge{display:inline-flex;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,84px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:18px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,4vw,56px);line-height:1;letter-spacing:-0.01em;margin-bottom:16px}
+    .plan-card{background:#242B20;border:2px solid rgba(120,226,5,0.15);border-radius:24px;padding:40px;position:relative;overflow:hidden}
+    .plan-card.featured{border-color:#78E205;background:linear-gradient(135deg,#242B20,#141A11)}
+    .plan-card .badge-top{position:absolute;top:20px;right:20px;background:#78E205;color:#1A1F18;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.06em}
+    .plan-card .price{font-family:'Bebas Neue',sans-serif;font-size:64px;color:#78E205;line-height:1;margin:16px 0 4px}
+    .plan-card .price span{font-size:28px}
+    .plan-card h3{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.03em;margin-bottom:8px}
+    .plan-card .desc{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:24px;line-height:1.6}
+    .plan-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+    .plan-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7)}
+    .check{width:18px;height:18px;border-radius:50%;background:rgba(120,226,5,0.15);border:1px solid rgba(120,226,5,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .x-icon{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:rgba(255,255,255,0.25)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+    .benefit-item{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:16px;padding:24px;text-align:center}
+    .benefit-item .icon{font-size:36px;margin-bottom:12px}
+    .benefit-item h3{font-family:'Bebas Neue',sans-serif;font-size:18px;margin-bottom:8px}
+    .benefit-item p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+    .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="badge">🛡️ &nbsp;MAINTENANCE PLAN</div>
+    <h1>PROTECT YOUR HVAC.<br><span style="color:#78E205;">SAVE MORE.</span></h1>
+    <p class="lead">Our annual maintenance plans keep your system running at peak efficiency, prevent unexpected breakdowns, and save you money on repairs — year after year.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="/schedule-service.html" class="btn-primary">Join a Plan Today</a>
+      <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+    </div>
+  </div>
+</div>
+
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="section-label">CHOOSE YOUR PLAN</div>
+    <h2>PLANS FOR EVERY <span style="color:#78E205;">BUDGET</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:40px;max-width:560px">All plans include bi-annual tune-ups and priority scheduling. Upgrade for more savings and benefits.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+
+      <!-- Basic Plan -->
+      <div class="plan-card">
+        <h3>BASIC PLAN</h3>
+        <div class="price"><span>$</span>99<span style="font-size:20px;color:rgba(255,255,255,0.4)">/yr</span></div>
+        <p class="desc">Essential maintenance to keep your system running reliably.</p>
+        <ul class="plan-features">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>1 seasonal tune-up per year</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Filter replacement included</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Priority scheduling</li>
+          <li><span class="x-icon">✕</span><span style="color:rgba(255,255,255,0.3)">Repair discount</span></li>
+          <li><span class="x-icon">✕</span><span style="color:rgba(255,255,255,0.3)">Emergency priority</span></li>
+        </ul>
+        <a href="/schedule-service.html" class="btn-outline" style="justify-content:center;width:100%">Get Started</a>
+      </div>
+
+      <!-- Premium Plan (featured) -->
+      <div class="plan-card featured">
+        <div class="badge-top">MOST POPULAR</div>
+        <h3>PREMIUM PLAN</h3>
+        <div class="price"><span>$</span>179<span style="font-size:20px;color:rgba(255,255,255,0.4)">/yr</span></div>
+        <p class="desc">The complete maintenance solution — maximum savings and peace of mind.</p>
+        <ul class="plan-features">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>2 seasonal tune-ups per year</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Filter replacements included</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Priority scheduling always</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>15% off all repairs</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Emergency priority response</li>
+        </ul>
+        <a href="/schedule-service.html" class="btn-primary" style="justify-content:center;width:100%">Join Premium</a>
+      </div>
+
+      <!-- Commercial Plan -->
+      <div class="plan-card">
+        <h3>COMMERCIAL PLAN</h3>
+        <div class="price" style="font-size:40px">Custom</div>
+        <p class="desc">Tailored maintenance contracts for businesses of any size.</p>
+        <ul class="plan-features">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Custom visit frequency</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Multiple units covered</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Dedicated account manager</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Emergency priority service</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Detailed service reports</li>
+        </ul>
+        <a href="tel:+13212076757" class="btn-outline" style="justify-content:center;width:100%">📞 Call for Pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#242B20">
+  <div class="container">
+    <div class="section-label">WHY MAINTAIN YOUR HVAC</div>
+    <h2>THE BENEFITS OF <span style="color:#78E205;">REGULAR SERVICE</span></h2>
+    <div class="benefits-grid" style="margin-top:36px">
+      <div class="benefit-item"><div class="icon">💰</div><h3>Save on Repairs</h3><p>Catch small problems before they become expensive breakdowns.</p></div>
+      <div class="benefit-item"><div class="icon">⚡</div><h3>Lower Energy Bills</h3><p>A well-maintained system uses up to 25% less energy than a neglected one.</p></div>
+      <div class="benefit-item"><div class="icon">📅</div><h3>Longer System Life</h3><p>Regular tune-ups can add years to the life of your HVAC equipment.</p></div>
+      <div class="benefit-item"><div class="icon">🌡️</div><h3>Better Comfort</h3><p>A clean, tuned system heats and cools more evenly and efficiently.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2 style="margin-bottom:12px">JOIN A MAINTENANCE PLAN TODAY</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:32px">Protect your investment and enjoy worry-free comfort all year round.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <a href="/schedule-service.html" class="btn-primary">Get Started</a>
+    <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

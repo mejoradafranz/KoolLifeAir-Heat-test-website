@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC Repair — Kool Life Air & Heat | Houston TX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(217,59,59,0.12) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}.breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge-red{display:inline-flex;align-items:center;background:rgba(217,59,59,0.1);border:1px solid rgba(217,59,59,0.3);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#E57373;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,76px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-red{display:inline-flex;align-items:center;gap:10px;background:#D93B3B;color:#fff;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-red:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(217,59,59,0.3)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,3.5vw,52px);line-height:1;letter-spacing:-0.01em;margin-bottom:16px}
+    .problem-card{background:#242B20;border:1px solid rgba(217,59,59,0.15);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+    .problem-card .icon{font-size:28px;flex-shrink:0}
+    .problem-card h3{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.03em;margin-bottom:6px}
+    .problem-card p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.6}
+    .features-list{display:flex;flex-direction:column;gap:14px;list-style:none}
+    .features-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6}
+    .check{width:20px;height:20px;border-radius:50%;background:rgba(120,226,5,0.12);border:1px solid rgba(120,226,5,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .step:last-child{border-bottom:none}
+    .step-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#78E205;line-height:1;min-width:40px}
+    .step h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;margin-bottom:6px}
+    .step p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+    .emergency-band{background:linear-gradient(135deg,rgba(217,59,59,0.12),rgba(17,20,18,1));border:1px solid rgba(217,59,59,0.2);border-radius:20px;padding:40px;text-align:center}
+    .alert-box{background:rgba(217,59,59,0.08);border:1px solid rgba(217,59,59,0.25);border-radius:14px;padding:24px;margin-top:32px}
+    .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/air-conditioning.html">Air Conditioning</a> › AC Repair</div>
+    <div class="badge-red">🔧 &nbsp;AC REPAIR — 24/7</div>
+    <h1>FAST AC REPAIR<br><span style="color:#E57373;">ANY TIME, ANY DAY</span></h1>
+    <p class="lead">AC broke down in the Houston heat? Don't suffer. Our certified technicians are on call around the clock — we diagnose fast, fix it right, and charge a fair flat rate. Guaranteed.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="tel:+13212076757" class="btn-red">📞 Emergency: 321-207-6757</a>
+      <a href="/schedule-service.html" class="btn-primary">Schedule Repair</a>
+    </div>
+  </div>
+</div>
+
+<!-- Intro with image -->
+<section style="background:#1A1F18;padding:72px 24px">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:48px;align-items:start;margin-bottom:48px">
+      <img src="/BRAND_ASSETS/AC.png" alt="AC Repair Technician" style="width:100%;border-radius:16px;object-fit:cover;" />
+      <div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(24px,2.5vw,36px);color:#6EC6F5;line-height:1.15;margin-bottom:20px;">Professional Air Conditioning Repair in Houston, TX</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:14px;">The last thing a Houstonian wants is to be without air conditioning in 90-degree weather. Kool Life Air & Heat knows that an air conditioner breakdown during the height of the summer is urgent!</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;">Kool Life Air & Heat gives you peace of mind with convenient availability and quality workmanship.</p>
+      </div>
+    </div>
+
+    <div style="height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.2),transparent);margin-bottom:48px;"></div>
+
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(22px,2.5vw,32px);color:#78E205;margin-bottom:16px;">Affordable Repairs</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Air conditioning repairs don't have to be a financial burden. We'll drive out to your home and share the exact cost before we begin doing any work. Kool Life Air & Heat will also pinpoint any financing deals that you may qualify for. With approved credit, you may be eligible for an affordable monthly payment plan.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:16px;">Our experienced technicians will also advise you about the best course of action. Your air conditioner might just need a good cleaning. It could need a couple of parts to be replaced. It might need a total system upgrade. Kool Life Air & Heat will take the guesswork away and offer a concrete action plan.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.85;">Kool Life Air & Heat is here for all of your needs for air conditioning repair in Houston, TX, and the neighboring cities. We're proud to keep <strong style="color:#78E205;">The Woodlands, Sugar Land, Katy, Pearland</strong> and the surrounding area refreshed all year long. No repair is too small or too large for our HVAC experts.</p>
+  </div>
+</section>
+
+<!-- SECTION 1: Common Problems -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="section-label">COMMON PROBLEMS WE FIX</div>
+    <h2>IS YOUR AC DOING <span style="color:#78E205;">ANY OF THIS?</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:36px;max-width:600px;line-height:1.75">Houston summers are brutal — temperatures regularly hit 100°F with humidity that makes it feel even hotter. A broken AC isn't just uncomfortable, it's a health risk. We repair all makes and models, usually same day.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div class="problem-card"><div class="icon">🌡️</div><div><h3>Not Cooling Enough</h3><p>Warm air blowing from the vents or the house won't reach the set temperature. Likely causes: low refrigerant, dirty condenser coils, failing compressor, or a refrigerant leak that's slowly depleting over time.</p></div></div>
+      <div class="problem-card"><div class="icon">💧</div><div><h3>Water Leaking</h3><p>Clogged condensate drain lines are extremely common in Houston's humid climate. A frozen evaporator coil — often caused by low refrigerant or restricted airflow — will also cause pooling water around the air handler.</p></div></div>
+      <div class="problem-card"><div class="icon">🔊</div><div><h3>Strange Noises</h3><p>Banging or clanking usually means loose or broken parts inside the compressor. Squealing points to a worn fan belt or bad bearings. Clicking on startup and shutdown is normal — clicking continuously is not.</p></div></div>
+      <div class="problem-card"><div class="icon">🔌</div><div><h3>AC Won't Turn On</h3><p>Could be a tripped circuit breaker, a blown capacitor, a faulty contactor relay, or thermostat wiring issues. Our techs carry capacitors and common electrical parts on every truck for same-trip repairs.</p></div></div>
+      <div class="problem-card"><div class="icon">💨</div><div><h3>Weak Airflow</h3><p>Poor airflow from vents means your home takes forever to cool. Often caused by a clogged filter, blocked return air grille, failing blower motor, or collapsed ductwork. We'll find the restriction and fix it.</p></div></div>
+      <div class="problem-card"><div class="icon">💸</div><div><h3>High Energy Bills</h3><p>If your electricity bill spikes in summer without explanation, your AC may be working twice as hard due to dirty coils, refrigerant issues, or an aging system losing efficiency. A tune-up can cut costs significantly.</p></div></div>
+    </div>
+
+    <div class="alert-box" style="margin-top:40px">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#E57373;margin-bottom:8px">⚠️ WHY SPEED MATTERS IN HOUSTON</div>
+      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.75">Houston summers are relentlessly hot. With heat indices routinely above 105°F from June through September, a broken AC can become dangerous — especially for young children, elderly family members, and pets. Heat stroke can set in within hours. Don't wait. Call us now and we'll get a tech to your door fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: Process + Emergency -->
+<section style="background:#242B20">
+  <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+    <div>
+      <div class="section-label">OUR REPAIR PROCESS</div>
+      <h2>HOW WE FIX IT <span style="color:#78E205;">RIGHT</span></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:32px;line-height:1.75">We don't guess — we diagnose. Our technicians use professional diagnostic tools to pinpoint the exact problem before touching anything. You'll always know what's wrong and what it costs before we start.</p>
+      <div style="max-width:520px">
+        <div class="step"><div class="step-num">01</div><div><h3>CALL OR SCHEDULE</h3><p>Call our 24/7 line or schedule online. We'll confirm a same-day or next-morning appointment — no waiting three days for a callback.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div><h3>DIAGNOSIS ON ARRIVAL</h3><p>Our tech arrives with a fully stocked truck and runs a complete diagnostic — checking refrigerant levels, electrical components, airflow, coils, and controls.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div><h3>FLAT-RATE QUOTE</h3><p>We explain exactly what's wrong in plain language and give you a flat-rate price. No surprises, no upselling. You approve before we start any work.</p></div></div>
+        <div class="step"><div class="step-num">04</div><div><h3>REPAIR & TEST</h3><p>We fix the problem, test the full system, verify the temperature drop across the coil, and make sure everything is working perfectly before we leave.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">OUR GUARANTEE</div>
+      <h2>REPAIR DONE <span style="color:#78E205;">RIGHT</span></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.65);margin-bottom:28px;line-height:1.75">Every repair comes with our 90-day warranty. If the same issue returns within 90 days, we come back at no charge — parts and labor.</p>
+      <ul class="features-list" style="margin-bottom:36px">
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Flat-rate pricing — you approve before we start</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>90-day repair guarantee on all work</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Most repairs completed in a single visit</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Parts stocked on every service truck</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>NATE-certified technicians on every call</li>
+        <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>All makes and models serviced</li>
+      </ul>
+      <div class="emergency-band">
+        <div style="font-size:48px;margin-bottom:16px">🚨</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:#E57373;margin-bottom:8px">AC EMERGENCY?</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.6">We have technicians on call 24 hours a day, 7 days a week — including holidays. Call now and we'll dispatch someone to you immediately.</p>
+        <a href="tel:+13212076757" class="btn-red" style="justify-content:center;width:100%">📞 Call Now: 321-207-6757</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Repair vs Replace -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="section-label">REPAIR OR REPLACE?</div>
+    <h2>WE'LL GIVE YOU AN <span style="color:#78E205;">HONEST ANSWER</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:40px;max-width:640px;line-height:1.75">Not every broken AC needs to be replaced — and not every broken AC is worth repairing. We give you a straight answer based on your system's age, condition, and repair cost. As a general rule of thumb:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <div style="background:#242B20;border:1px solid rgba(120,226,5,0.12);border-radius:18px;padding:32px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#78E205;margin-bottom:16px">REPAIR IS USUALLY WORTH IT WHEN:</div>
+        <ul class="features-list">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Your system is under 10 years old</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>The repair cost is less than 50% of replacement</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>It's a single, straightforward component failure</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>The system runs R-410A refrigerant (not R-22)</li>
+        </ul>
+      </div>
+      <div style="background:#242B20;border:1px solid rgba(217,59,59,0.15);border-radius:18px;padding:32px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#E57373;margin-bottom:16px">REPLACEMENT MAKES SENSE WHEN:</div>
+        <ul class="features-list">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Your system is 12–15+ years old</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>You've had multiple repairs in the past 2 years</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>The compressor has failed (most expensive repair)</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>It uses R-22 refrigerant (now phased out and costly)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="section-label" style="margin-bottom:16px">24/7 SERVICE</div>
+  <h2 style="margin-bottom:12px">DON'T SUFFER IN THE HEAT</h2>
+  <p style="font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:32px">Schedule a repair or call our emergency line — we're always ready, day or night.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+    <a href="/schedule-service.html" class="btn-primary">Schedule Repair</a>
+    <a href="tel:+13212076757" class="btn-red">📞 Emergency: 321-207-6757</a>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

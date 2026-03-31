@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Estimates — Kool Life Air & Heat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:380px;display:flex;align-items:center;padding:120px 24px 72px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(120,226,5,0.1) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}.breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge{display:inline-flex;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,72px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:16px}
+    .lead{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.65);max-width:560px}
+    section{padding:72px 24px}
+    .section-label{display:inline-flex;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:14px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,3.5vw,48px);line-height:1;letter-spacing:-0.01em;margin-bottom:14px}
+    .trust-badge{background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:16px;padding:24px;text-align:center}
+    .trust-badge .icon{font-size:36px;margin-bottom:12px}
+    .trust-badge h3{font-family:'Bebas Neue',sans-serif;font-size:18px;margin-bottom:8px}
+    .trust-badge p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
+    .form-card{background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:24px;padding:40px}
+    label{display:block;font-size:12px;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:0.08em;margin-bottom:8px}
+    input,select,textarea{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 16px;font-size:14px;color:#fff;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+    input:focus,select:focus,textarea:focus{border-color:rgba(120,226,5,0.45)}
+    select option{background:#242B20}
+    .btn-primary{width:100%;background:#78E205;color:#1A1F18;font-size:16px;font-weight:700;padding:16px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/contact.html">Contact Us</a> › Free Estimates</div>
+    <div class="badge">💰 &nbsp;FREE ESTIMATES</div>
+    <h1>GET YOUR<br><span style="color:#78E205;">FREE ESTIMATE</span></h1>
+    <p class="lead">No obligation. No pressure. Just an honest, upfront quote from a certified technician — at no cost to you.</p>
+  </div>
+</div>
+
+<section style="background:#1A1F18">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:60px">
+      <div class="trust-badge"><div class="icon">🏠</div><h3>FREE IN-HOME VISIT</h3><p>We come to you. A certified tech assesses your home's needs in person.</p></div>
+      <div class="trust-badge"><div class="icon">📋</div><h3>CLEAR OPTIONS</h3><p>We present multiple options at different price points — no pressure.</p></div>
+      <div class="trust-badge"><div class="icon">🤝</div><h3>NO OBLIGATION</h3><p>You decide whether to move forward. Zero obligation, zero pressure.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start">
+      <div class="form-card">
+        <div class="section-label" style="margin-bottom:20px">REQUEST YOUR FREE ESTIMATE</div>
+        <form onsubmit="handleSubmit(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+            <div><label>FIRST NAME</label><input type="text" placeholder="John" required /></div>
+            <div><label>LAST NAME</label><input type="text" placeholder="Smith" required /></div>
+          </div>
+          <div style="margin-bottom:16px"><label>PHONE NUMBER</label><input type="tel" placeholder="(555) 000-0000" required /></div>
+          <div style="margin-bottom:16px"><label>EMAIL ADDRESS</label><input type="email" placeholder="you@email.com" /></div>
+          <div style="margin-bottom:16px"><label>SERVICE ADDRESS</label><input type="text" placeholder="123 Main St, Houston, TX" /></div>
+          <div style="margin-bottom:16px">
+            <label>SERVICE INTERESTED IN</label>
+            <select required>
+              <option value="">Select a service…</option>
+              <option>New AC Installation</option>
+              <option>New Heating System</option>
+              <option>Ductless Mini-Split System</option>
+              <option>Heat Pump</option>
+              <option>Indoor Air Quality System</option>
+              <option>Commercial HVAC</option>
+              <option>Not Sure — Need Advice</option>
+            </select>
+          </div>
+          <div style="margin-bottom:16px">
+            <label>BEST TIME TO CONTACT YOU</label>
+            <select>
+              <option>Morning (8am–12pm)</option>
+              <option>Afternoon (12pm–5pm)</option>
+              <option>Evening (5pm–8pm)</option>
+              <option>Any Time</option>
+            </select>
+          </div>
+          <div style="margin-bottom:24px"><label>ADDITIONAL DETAILS (OPTIONAL)</label><textarea rows="3" placeholder="Tell us more about your home or what you're looking for…"></textarea></div>
+          <button type="submit" class="btn-primary" id="submit-btn">Request Free Estimate →</button>
+          <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px">We'll contact you within 1 business hour to schedule your in-home visit.</p>
+        </form>
+        <div id="success-msg" style="display:none;text-align:center;padding:40px 0">
+          <div style="font-size:56px;margin-bottom:16px">✅</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#78E205;margin-bottom:8px">REQUEST RECEIVED!</div>
+          <p style="font-size:15px;color:rgba(255,255,255,0.65)">We'll reach out shortly to schedule your free in-home estimate.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="section-label">WHAT'S INCLUDED</div>
+        <h2>YOUR FREE ESTIMATE <span style="color:#78E205;">INCLUDES</span></h2>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">✅</div>
+            <div><div style="font-weight:600;font-size:15px;margin-bottom:4px">Full System Assessment</div><div style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">We inspect your current setup and measure your space to right-size the new system.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">📊</div>
+            <div><div style="font-weight:600;font-size:15px;margin-bottom:4px">Multiple Options & Pricing</div><div style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">We present good/better/best options at different price points — you choose what fits your budget.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">💡</div>
+            <div><div style="font-weight:600;font-size:15px;margin-bottom:4px">Expert Recommendations</div><div style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">We'll explain which system is the best match for your home's size, layout, and budget.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:36px;height:36px;border-radius:10px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px">🏦</div>
+            <div><div style="font-weight:600;font-size:15px;margin-bottom:4px">Financing Information</div><div style="font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6">We'll walk you through available financing options so cost is never a barrier to comfort.</div></div>
+          </div>
+        </div>
+        <a href="tel:+13212076757" style="display:flex;align-items:center;gap:12px;background:#242B20;border:1px solid rgba(120,226,5,0.15);border-radius:14px;padding:18px;text-decoration:none;margin-top:8px">
+          <span style="font-size:28px">📞</span>
+          <div><div style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.06em;margin-bottom:4px">PREFER TO CALL?</div><div style="font-size:18px;font-weight:700;color:#78E205">321-207-6757</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  document.getElementById('submit-btn').textContent='Sending…';
+  setTimeout(()=>{
+    e.target.style.display='none';
+    document.getElementById('success-msg').style.display='block';
+  },800);
+}
+</script>
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kool Life Air & Heat — Comfort All Year Round</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lime: {
+              400: '#8FE824',
+              500: '#78D800',
+              600: '#62B800',
+            },
+            brand: {
+              green: '#78E205',
+              red: '#D93B3B',
+              ice: '#6EC6F5',
+              dark: '#1A1F18',
+              surface: '#242B20',
+              elevated: '#181C18',
+              border: '#242824',
+            },
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          letterSpacing: {
+            tightest: '-0.04em',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #1A1F18; color: #fff; overflow-x: hidden; }
+
+    /* Grain texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #242B20; }
+    ::-webkit-scrollbar-thumb { background: #78E205; border-radius: 3px; }
+
+    /* Glow utilities */
+    .glow-green { box-shadow: 0 0 32px 0 rgba(120, 226, 5, 0.25), 0 2px 8px 0 rgba(0,0,0,0.4); }
+    .glow-red { box-shadow: 0 0 32px 0 rgba(217, 59, 59, 0.25), 0 2px 8px 0 rgba(0,0,0,0.4); }
+    .text-glow { text-shadow: 0 0 40px rgba(120, 226, 5, 0.5); }
+    .border-glow { box-shadow: inset 0 0 0 1px rgba(120,226,5,0.15), 0 4px 24px rgba(0,0,0,0.5); }
+
+    /* Layered bg radials */
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(120,226,5,0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(110,198,245,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 10% 90%, rgba(217,59,59,0.06) 0%, transparent 60%),
+        #1A1F18;
+    }
+    .section-bg {
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%, rgba(120,226,5,0.04) 0%, transparent 70%),
+        #242B20;
+    }
+    .dark-bg {
+      background: #1A1F18;
+    }
+
+    /* Animate on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Card hover */
+    .card-hover {
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s cubic-bezier(0.22,1,0.36,1), border-color 0.35s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(120,226,5,0.25);
+    }
+
+    /* Button transitions */
+    .btn-primary {
+      transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(120,226,5,0.35);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #78E205; outline-offset: 3px; }
+
+    .btn-outline {
+      transition: transform 0.2s cubic-bezier(0.22,1,0.36,1), box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .btn-outline:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .btn-outline:active { transform: translateY(0); }
+    .btn-outline:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+    /* Nav link hover */
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: #78E205;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s cubic-bezier(0.22,1,0.36,1);
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .nav-link:hover { color: #78E205; }
+    .nav-link:focus-visible { outline: 2px solid #78E205; outline-offset: 4px; border-radius: 2px; }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(120,226,5,0.3) 30%, rgba(120,226,5,0.3) 70%, transparent);
+    }
+
+    /* Stat number */
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      line-height: 1;
+    }
+
+    /* Step connector */
+    .step-line {
+      position: absolute;
+      top: 28px;
+      left: calc(50% + 32px);
+      right: calc(-50% + 32px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(120,226,5,0.4), rgba(120,226,5,0.1));
+    }
+
+    /* Ice/Fire badge */
+    .badge-cool { background: rgba(110,198,245,0.12); color: #6EC6F5; border: 1px solid rgba(110,198,245,0.25); }
+    .badge-hot { background: rgba(217,59,59,0.12); color: #E57373; border: 1px solid rgba(217,59,59,0.25); }
+
+    /* Testimonial card */
+    .stars { color: #78E205; letter-spacing: 2px; }
+
+    /* Logo path */
+    .logo-img { height: 56px; width: auto; object-fit: contain; }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.35s cubic-bezier(0.22,1,0.36,1), opacity 0.3s ease; overflow: hidden; }
+
+    /* Ping animation for CTA badge */
+    @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+    .ping { animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero-bg" style="min-height:100vh;display:flex;align-items:center;padding-top:72px;position:relative;overflow:hidden;">
+
+  <!-- Decorative blobs -->
+  <div style="position:absolute;top:-120px;right:-120px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(120,226,5,0.07) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(110,198,245,0.06) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div style="max-width:1280px;margin:0 auto;padding:80px 24px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+
+    <!-- Left: Copy -->
+    <div>
+      <!-- Emergency badge -->
+      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(217,59,59,0.1);border:1px solid rgba(217,59,59,0.25);border-radius:100px;padding:6px 16px;margin-bottom:32px;">
+        <span style="position:relative;display:inline-flex;">
+          <span style="display:block;width:8px;height:8px;border-radius:50%;background:#D93B3B;"></span>
+          <span class="ping" style="position:absolute;inset:0;border-radius:50%;background:#D93B3B;display:block;width:8px;height:8px;"></span>
+        </span>
+        <span style="font-size:13px;font-weight:600;color:#E57373;letter-spacing:0.04em;">24/7 EMERGENCY SERVICE AVAILABLE</span>
+      </div>
+
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:24px;">
+        <span style="display:block;color:#fff;">STAY COOL.</span>
+        <span style="display:block;color:#78E205;" class="text-glow">STAY WARM.</span>
+        <span style="display:block;color:rgba(255,255,255,0.65);">YEAR ROUND.</span>
+      </h1>
+
+      <p style="font-size:18px;line-height:1.75;color:rgba(255,255,255,0.75);max-width:480px;margin-bottom:40px;">
+        Houston's trusted HVAC experts — fast installations, reliable repairs, and maintenance plans that keep your family comfortable no matter the season.
+      </p>
+
+      <!-- CTAs -->
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:48px;">
+        <a href="#contact" class="btn-primary glow-green" style="display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:16px;font-weight:700;padding:16px 32px;border-radius:10px;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Get Free Quote
+        </a>
+        <a href="tel:+13212076757" class="btn-outline" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:16px;font-weight:600;padding:16px 32px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          Call Now
+        </a>
+      </div>
+
+      <!-- Trust row -->
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:500;">Licensed & Insured</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:500;">Same-Day Service</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <span style="font-size:13px;color:rgba(255,255,255,0.7);font-weight:500;">No Hidden Fees</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Hero image card -->
+    <div style="position:relative;display:flex;justify-content:center;">
+      <div style="position:relative;border-radius:24px;overflow:hidden;width:100%;max-width:520px;" class="border-glow">
+        <!-- Background image -->
+        <div style="position:relative;height:480px;background:linear-gradient(135deg,#242B20 0%,#1a2012 100%);display:flex;align-items:center;justify-content:center;">
+          <!-- Decorative HVAC icon display -->
+          <div style="text-align:center;padding:40px;">
+            <div style="font-size:120px;line-height:1;margin-bottom:24px;filter:drop-shadow(0 0 40px rgba(120,226,5,0.3));">❄️</div>
+            <div style="font-family:'Bebas Neue';font-size:32px;color:#78E205;letter-spacing:0.05em;margin-bottom:8px;">COOLING SEASON SPECIAL</div>
+            <div style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.6;">AC Tune-Up + Filter Replacement<br>Starting at just</div>
+            <div style="font-family:'Bebas Neue';font-size:64px;color:#fff;line-height:1;margin-top:8px;">$<span style="color:#78E205;">79</span></div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:4px;">Limited time offer • Book today</div>
+          </div>
+
+          <!-- Gradient overlay bottom -->
+          <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to top,rgba(11,12,11,0.9),transparent);pointer-events:none;"></div>
+        </div>
+
+        <!-- Green accent line top -->
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#78E205 40%,#78E205 60%,transparent);"></div>
+
+        <!-- Floating badge -->
+        <div style="position:absolute;top:20px;right:20px;background:rgba(11,12,11,0.85);backdrop-filter:blur(12px);border:1px solid rgba(120,226,5,0.3);border-radius:12px;padding:10px 16px;text-align:center;">
+          <div style="font-family:'Bebas Neue';font-size:28px;color:#78E205;line-height:1;">500+</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.65);font-weight:500;">5-Star Reviews</div>
+        </div>
+      </div>
+
+      <!-- Floating stat card -->
+      <div style="position:absolute;bottom:-20px;left:-20px;background:rgba(17,20,18,0.95);backdrop-filter:blur(16px);border:1px solid rgba(120,226,5,0.2);border-radius:16px;padding:16px 20px;box-shadow:0 20px 60px rgba(0,0,0,0.5);" class="fade-up">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:44px;height:44px;border-radius:12px;background:rgba(120,226,5,0.12);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Bebas Neue';font-size:22px;color:#fff;line-height:1;">10+ YEARS</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:2px;">Serving Houston Area</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;">
+    <span style="font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;font-weight:500;">SCROLL</span>
+    <div style="width:1px;height:32px;background:linear-gradient(to bottom,rgba(120,226,5,0.5),transparent);"></div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ STATS BAR ═══════════════════ -->
+<div style="background:#242B20;border-top:1px solid rgba(120,226,5,0.1);border-bottom:1px solid rgba(120,226,5,0.1);">
+  <div style="max-width:1280px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+    <div style="text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.06);">
+      <div class="stat-num" style="font-size:48px;color:#78E205;">2,400<span style="color:rgba(120,226,5,0.6);font-size:32px;">+</span></div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:4px;letter-spacing:0.02em;">Homes Serviced</div>
+    </div>
+    <div style="text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.06);">
+      <div class="stat-num" style="font-size:48px;color:#78E205;">10<span style="color:rgba(120,226,5,0.6);font-size:32px;">+ yrs</span></div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:4px;letter-spacing:0.02em;">In Business</div>
+    </div>
+    <div style="text-align:center;padding:16px;border-right:1px solid rgba(255,255,255,0.06);">
+      <div class="stat-num" style="font-size:48px;color:#78E205;">98<span style="color:rgba(120,226,5,0.6);font-size:32px;">%</span></div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:4px;letter-spacing:0.02em;">Customer Satisfaction</div>
+    </div>
+    <div style="text-align:center;padding:16px;">
+      <div class="stat-num" style="font-size:48px;color:#78E205;">24<span style="color:rgba(120,226,5,0.6);font-size:32px;">/7</span></div>
+      <div style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:4px;letter-spacing:0.02em;">Emergency Support</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════ MAINTENANCE PLANS ═══════════════════ -->
+<section style="padding:0 0 0 0;background:#1A1F18;">
+  <!-- Band header -->
+  <div style="background:linear-gradient(135deg,#6B0000,#8B0000);padding:48px 24px;text-align:center;">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,4vw,52px);color:#fff;letter-spacing:0.02em;margin-bottom:10px;">3 PREVENTATIVE MAINTENANCE PLANS</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,0.75);font-style:italic;">to ensure your air conditioner won't break down when you need it.</p>
+  </div>
+
+  <!-- Plan cards -->
+  <div style="background:#1A1F18;padding:60px 24px;">
+    <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+
+      <!-- Climate Care Plan -->
+      <div style="border:2px solid rgba(139,0,0,0.6);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#6B0000,#8B0000);padding:24px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.08em;">CLIMATE CARE PLAN</div>
+        </div>
+        <div style="background:#242B20;padding:28px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:16px;">Benefits:</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maximized System Efficiency</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Reduced Equipment Failures</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maintain a Valid Factory Parts Warranty (if applicable)</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>1 visit per year</li>
+          </ul>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:8px;">Billing Cycle, choose from:</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Per System - $7.49 Monthly, or $89.99 Annually</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home Harmony Plan (most popular) -->
+      <div style="border:2px solid rgba(120,226,5,0.5);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transform:translateY(-8px);box-shadow:0 20px 60px rgba(120,226,5,0.15);">
+        <div style="background:rgba(120,226,5,0.15);border-bottom:1px solid rgba(120,226,5,0.3);padding:10px;text-align:center;">
+          <div style="font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.12em;">OUR MOST POPULAR OPTION</div>
+        </div>
+        <div style="background:#1a3a6B;padding:20px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.08em;">HOME HARMONY PLAN</div>
+        </div>
+        <div style="background:#242B20;padding:28px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:16px;">Benefits:</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maximized System Efficiency</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Reduced Equipment Failures</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Priority Scheduling for Service Calls</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maintain a Valid Factory Parts Warranty (if applicable)</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>2 visits per year: 1 comprehensive inspection &amp; 1 operational inspection</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>10% Repair Discount</li>
+          </ul>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:8px;">Billing Cycle, choose from:</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Per System - $14.99 Monthly, $89.99 every 6 mo, or $179.99 Annually</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peak Performance Plan -->
+      <div style="border:2px solid rgba(30,100,30,0.6);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
+        <div style="background:linear-gradient(135deg,#1a4a1a,#2d6a2d);padding:24px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:0.08em;">PEAK PERFORMANCE PLAN</div>
+        </div>
+        <div style="background:#242B20;padding:28px;flex:1;display:flex;flex-direction:column;">
+          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:16px;">Benefits:</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maximized System Efficiency</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Reduced Equipment Failures</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Same Day Scheduling on all Service Calls received before 3pm</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maintain a Valid Factory Parts Warranty (if applicable)</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>2 visits per year: 1 comprehensive inspection &amp; 1 operational inspection</li>
+            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>15% Repair Discount</li>
+          </ul>
+          <div>
+            <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:8px;">Billing Cycle, choose from:</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Per System - $19.99 Monthly, $114.99 every 6 mo, or $219.99 Annually</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/maintenance-plan.html" style="display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;">View Maintenance Plans →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BEST DEALS ═══════════════════ -->
+<section style="background:#1A1F18;padding:72px 24px;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,42px);color:#78E205;text-align:center;letter-spacing:0.02em;margin-bottom:48px;">Best Deals on Air Conditioning in Houston, TX</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+      <a href="tel:+13212076757" style="text-decoration:none;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a1f2e,#242B20);border:1px solid rgba(120,226,5,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 24px 60px rgba(120,226,5,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
+        <div style="padding:28px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;">
+          <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;border-radius:12px;" />
+          <div style="font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:10px;text-transform:uppercase;">First Time Customer</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:#fff;line-height:1;margin-bottom:4px;">$65</div>
+          <div style="font-weight:700;font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:6px;">System Diagnostic</div>
+          <div style="font-style:italic;font-size:13px;color:rgba(255,255,255,0.4);">Originally $79.99</div>
+        </div>
+        <div style="background:#78E205;padding:14px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#1A1F18;letter-spacing:0.08em;">CALL TODAY!</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.5);margin-top:2px;">applies to qualifying equipment contact for details*</div>
+        </div>
+      </a>
+      <a href="tel:+13212076757" style="text-decoration:none;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a1f2e,#242B20);border:1px solid rgba(120,226,5,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 24px 60px rgba(120,226,5,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
+        <div style="padding:28px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;">
+          <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;border-radius:12px;" />
+          <div style="font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:10px;text-transform:uppercase;">Spring Special</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:#fff;line-height:1;margin-bottom:4px;">$150 Off</div>
+          <div style="font-weight:700;font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:6px;">Whole House Air Purifier</div>
+        </div>
+        <div style="background:#78E205;padding:14px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#1A1F18;letter-spacing:0.08em;">CALL TODAY!</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.5);margin-top:2px;">applies to qualifying equipment contact for details*</div>
+        </div>
+      </a>
+      <a href="tel:+13212076757" style="text-decoration:none;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a1f2e,#242B20);border:1px solid rgba(120,226,5,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 24px 60px rgba(120,226,5,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
+        <div style="padding:28px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;">
+          <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;border-radius:12px;" />
+          <div style="font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:10px;text-transform:uppercase;">Maintenance Offer</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:#78E205;line-height:1;margin-bottom:4px;">FREE</div>
+          <div style="font-weight:700;font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:6px;">Maintenance With Full System Install</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.4);">AC &nbsp;•&nbsp; Heat &nbsp;•&nbsp; IAQ</div>
+        </div>
+        <div style="background:#78E205;padding:14px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#1A1F18;letter-spacing:0.08em;">CALL TODAY!</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.5);margin-top:2px;">applies to qualifying equipment contact for details*</div>
+        </div>
+      </a>
+      <a href="tel:+13212076757" style="text-decoration:none;display:flex;flex-direction:column;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#1a1f2e,#242B20);border:1px solid rgba(120,226,5,0.15);transition:transform 0.3s ease,box-shadow 0.3s ease;cursor:pointer;" onmouseover="this.style.transform='translateY(-8px) scale(1.02)';this.style.boxShadow='0 24px 60px rgba(120,226,5,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
+        <div style="padding:28px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1;">
+          <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" style="width:80px;height:80px;object-fit:contain;margin-bottom:16px;border-radius:12px;" />
+          <div style="font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.45);margin-bottom:10px;text-transform:uppercase;">Maintenance Offer</div>
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:56px;color:#fff;line-height:1;margin-bottom:4px;">$89.99</div>
+          <div style="font-weight:700;font-size:16px;color:rgba(255,255,255,0.85);margin-bottom:6px;">System Maintenance</div>
+        </div>
+        <div style="background:#78E205;padding:14px;text-align:center;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#1A1F18;letter-spacing:0.08em;">CALL TODAY!</div>
+          <div style="font-size:11px;color:rgba(0,0,0,0.5);margin-top:2px;">applies to qualifying equipment contact for details*</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SERVICES GRID ═══════════════════ -->
+<section style="background:#1A1F18;padding:60px 24px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+
+    <!-- Air Conditioning -->
+    <div style="background:rgba(110,130,180,0.15);border:1px solid rgba(110,130,180,0.2);border-radius:16px 0 0 16px;padding:40px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div style="font-size:64px;margin-bottom:8px;color:rgba(110,130,200,0.8);">🌀</div>
+      <a href="/air-conditioning.html" style="display:block;background:#1e3a8a;color:#fff;font-weight:700;font-size:17px;padding:12px 24px;border-radius:8px;text-decoration:none;margin-bottom:20px;width:100%;transition:background 0.2s;" onmouseover="this.style.background='#2d4fb5'" onmouseout="this.style.background='#1e3a8a'">Air Conditioning</a>
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%;">
+        <a href="/ac-installation.html" style="color:rgba(110,150,220,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,150,220,0.9)'">Air Conditioning Installation</a>
+        <a href="/ac-repair.html" style="color:rgba(110,150,220,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,150,220,0.9)'">Air Conditioning Repair</a>
+        <a href="/ductless-mini-splits.html" style="color:rgba(110,150,220,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,150,220,0.9)'">Ductless Mini-Splits</a>
+        <a href="/heat-pumps.html" style="color:rgba(110,150,220,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,150,220,0.9)'">Heat Pumps</a>
+      </div>
+    </div>
+
+    <!-- Heating -->
+    <div style="background:rgba(180,60,60,0.12);border:1px solid rgba(180,60,60,0.2);padding:40px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div style="font-size:64px;margin-bottom:8px;color:rgba(200,80,80,0.8);">🏠</div>
+      <a href="/heating.html" style="display:block;background:#8B0000;color:#fff;font-weight:700;font-size:17px;padding:12px 24px;border-radius:8px;text-decoration:none;margin-bottom:20px;width:100%;transition:background 0.2s;" onmouseover="this.style.background='#a00000'" onmouseout="this.style.background='#8B0000'">Heating</a>
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%;">
+        <a href="/heating-installation.html" style="color:rgba(220,110,110,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(220,110,110,0.9)'">Heating Installation</a>
+        <a href="/heating-repair.html" style="color:rgba(220,110,110,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(220,110,110,0.9)'">Heating Repair &amp; Service</a>
+        <a href="/heat-pumps.html" style="color:rgba(220,110,110,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(220,110,110,0.9)'">Heat Pumps</a>
+      </div>
+    </div>
+
+    <!-- Indoor Air Quality -->
+    <div style="background:rgba(60,120,60,0.12);border:1px solid rgba(60,120,60,0.2);border-radius:0 16px 16px 0;padding:40px 32px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div style="font-size:64px;margin-bottom:8px;color:rgba(80,160,80,0.8);">💨</div>
+      <a href="/indoor-air-quality.html" style="display:block;background:#1a4a1a;color:#fff;font-weight:700;font-size:17px;padding:12px 24px;border-radius:8px;text-decoration:none;margin-bottom:20px;width:100%;transition:background 0.2s;" onmouseover="this.style.background='#2d6a2d'" onmouseout="this.style.background='#1a4a1a'">Indoor Air Quality</a>
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%;">
+        <a href="/air-purification.html" style="color:rgba(110,200,110,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,200,110,0.9)'">Air Purification Systems</a>
+        <a href="/ultraviolet-lights.html" style="color:rgba(110,200,110,0.9);font-size:14px;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(110,200,110,0.9)'">Ultraviolet Lights</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ SERVICES ═══════════════════ -->
+<section id="services" class="dark-bg" style="padding:100px 24px;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <!-- Section header -->
+    <div style="text-align:center;margin-bottom:64px;" class="fade-up">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+        <span style="font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em;">WHAT WE DO</span>
+      </div>
+      <h2 style="font-family:'Bebas Neue';font-size:clamp(42px,5vw,68px);color:#fff;line-height:1;letter-spacing:-0.01em;margin-bottom:16px;">
+        COMPLETE HVAC <span style="color:#78E205;">SOLUTIONS</span>
+      </h2>
+      <p style="font-size:17px;color:rgba(255,255,255,0.65);max-width:560px;margin:0 auto;line-height:1.7;">
+        From blazing summers to chilly winters, we keep your home at the perfect temperature all year long.
+      </p>
+    </div>
+
+    <!-- Services grid -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+
+      <!-- AC Installation -->
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;cursor:default;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(110,198,245,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <span style="font-size:28px;">❄️</span>
+        </div>
+        <span class="badge-cool" style="display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.06em;margin-bottom:16px;">COOLING</span>
+        <h3 style="font-family:'Bebas Neue';font-size:26px;color:#fff;letter-spacing:0.02em;margin-bottom:12px;line-height:1.1;">AC INSTALLATION & REPLACEMENT</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;">
+          Energy-efficient systems from top brands. We handle everything from removal of the old unit to full installation and testing.
+        </p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Free in-home assessment
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>All major brands available
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>10-year parts warranty
+          </li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#78E205;text-decoration:none;transition:gap 0.2s ease;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+          Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Heating -->
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;cursor:default;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(217,59,59,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <span style="font-size:28px;">🔥</span>
+        </div>
+        <span class="badge-hot" style="display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.06em;margin-bottom:16px;">HEATING</span>
+        <h3 style="font-family:'Bebas Neue';font-size:26px;color:#fff;letter-spacing:0.02em;margin-bottom:12px;line-height:1.1;">HEATING SYSTEMS & FURNACES</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;">
+          Stay warm when temperatures drop. We install, repair, and maintain furnaces, heat pumps, and all heating systems.
+        </p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Gas & electric systems
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Heat pump specialists
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Same-day diagnostics
+          </li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#78E205;text-decoration:none;transition:gap 0.2s ease;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+          Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Repairs -->
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;cursor:default;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(120,226,5,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <span style="font-size:28px;">🔧</span>
+        </div>
+        <span style="display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.06em;margin-bottom:16px;background:rgba(120,226,5,0.1);color:#78E205;border:1px solid rgba(120,226,5,0.25);">REPAIRS</span>
+        <h3 style="font-family:'Bebas Neue';font-size:26px;color:#fff;letter-spacing:0.02em;margin-bottom:12px;line-height:1.1;">FAST HVAC REPAIRS</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;">
+          AC not cooling? Heater not working? Our certified techs diagnose and fix any HVAC issue fast — often same day.
+        </p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Emergency 24/7 service
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Upfront flat-rate pricing
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>90-day repair guarantee
+          </li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#78E205;text-decoration:none;transition:gap 0.2s ease;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+          Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Maintenance -->
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;cursor:default;">
+        <div style="width:56px;height:56px;border-radius:16px;background:rgba(120,226,5,0.08);display:flex;align-items:center;justify-content:center;margin-bottom:24px;">
+          <span style="font-size:28px;">🛡️</span>
+        </div>
+        <span style="display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px;letter-spacing:0.06em;margin-bottom:16px;background:rgba(120,226,5,0.1);color:#78E205;border:1px solid rgba(120,226,5,0.25);">MAINTENANCE</span>
+        <h3 style="font-family:'Bebas Neue';font-size:26px;color:#fff;letter-spacing:0.02em;margin-bottom:12px;line-height:1.1;">MAINTENANCE PLANS</h3>
+        <p style="font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:24px;">
+          Prevent costly breakdowns with our seasonal tune-up plans. Keep your system running at peak efficiency year-round.
+        </p>
+        <ul style="list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Bi-annual tune-ups
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Priority scheduling
+          </li>
+          <li style="display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,0.7);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Members save 15% on repairs
+          </li>
+        </ul>
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#78E205;text-decoration:none;transition:gap 0.2s ease;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='6px'">
+          Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ WHY CHOOSE US ═══════════════════ -->
+<section id="why-us" class="section-bg" style="padding:100px 24px;">
+  <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+    <!-- Left: Feature list -->
+    <div class="fade-up">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+        <span style="font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em;">WHY KOOL LIFE</span>
+      </div>
+      <h2 style="font-family:'Bebas Neue';font-size:clamp(38px,4.5vw,60px);color:#fff;line-height:1;letter-spacing:-0.01em;margin-bottom:16px;">
+        COMFORT YOU CAN<br><span style="color:#78E205;">COUNT ON</span>
+      </h2>
+      <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:40px;">
+        We've built our reputation on honesty, speed, and quality workmanship. When you call Kool Life, you're getting Houston's best — period.
+      </p>
+
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;gap:18px;align-items:flex-start;">
+          <div style="min-width:48px;height:48px;border-radius:14px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">Same-Day & Emergency Service</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;">AC out at midnight? We're on call 24/7. Most emergency jobs completed the same day you call.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;">
+          <div style="min-width:48px;height:48px;border-radius:14px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">Licensed, Bonded & Insured</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;">Full state licensing and insurance means your home and your family are protected every time.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;">
+          <div style="min-width:48px;height:48px;border-radius:14px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">Upfront, Flat-Rate Pricing</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;">No surprise charges. You'll know exactly what you're paying before we pick up a single tool.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;">
+          <div style="min-width:48px;height:48px;border-radius:14px;background:rgba(120,226,5,0.1);border:1px solid rgba(120,226,5,0.2);display:flex;align-items:center;justify-content:center;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div>
+            <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px;">Satisfaction Guaranteed</div>
+            <div style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.6;">If you're not 100% satisfied, we come back and make it right. That's the Kool Life promise.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Visual -->
+    <div class="fade-up" style="position:relative;">
+      <div style="border-radius:24px;overflow:hidden;background:#242B20;border:1px solid rgba(120,226,5,0.12);padding:40px;">
+        <div style="text-align:center;margin-bottom:32px;">
+          <div style="font-family:'Bebas Neue';font-size:20px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;">OUR CERTIFICATIONS</div>
+        </div>
+
+        <!-- Cert badges -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
+          <div style="background:rgba(120,226,5,0.06);border:1px solid rgba(120,226,5,0.15);border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:36px;margin-bottom:8px;">🏅</div>
+            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;">NATE Certified</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);">All technicians</div>
+          </div>
+          <div style="background:rgba(120,226,5,0.06);border:1px solid rgba(120,226,5,0.15);border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:36px;margin-bottom:8px;">⭐</div>
+            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;">5-Star Rated</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);">Google & Yelp</div>
+          </div>
+          <div style="background:rgba(120,226,5,0.06);border:1px solid rgba(120,226,5,0.15);border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:36px;margin-bottom:8px;">🔒</div>
+            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;">Fully Insured</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);">Liability & workers' comp</div>
+          </div>
+          <div style="background:rgba(120,226,5,0.06);border:1px solid rgba(120,226,5,0.15);border-radius:16px;padding:20px;text-align:center;">
+            <div style="font-size:36px;margin-bottom:8px;">⚡</div>
+            <div style="font-size:13px;font-weight:700;color:#fff;margin-bottom:4px;">Energy Star</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.4);">Preferred contractor</div>
+          </div>
+        </div>
+
+        <div class="divider" style="margin-bottom:24px;"></div>
+        <div style="text-align:center;">
+          <div style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:16px;font-weight:500;">TRUSTED BY HOMEOWNERS ACROSS</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+            <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px;font-size:12px;color:rgba(255,255,255,0.4);">Houston</span>
+            <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px;font-size:12px;color:rgba(255,255,255,0.4);">Katy</span>
+            <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px;font-size:12px;color:rgba(255,255,255,0.4);">Sugar Land</span>
+            <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px;font-size:12px;color:rgba(255,255,255,0.4);">The Woodlands</span>
+            <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:4px 14px;border-radius:100px;font-size:12px;color:rgba(255,255,255,0.4);">Pearland</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
+<section id="how-it-works" class="dark-bg" style="padding:100px 24px;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:72px;" class="fade-up">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+        <span style="font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em;">THE PROCESS</span>
+      </div>
+      <h2 style="font-family:'Bebas Neue';font-size:clamp(42px,5vw,68px);color:#fff;line-height:1;letter-spacing:-0.01em;margin-bottom:16px;">
+        GET COMFORTABLE IN<br><span style="color:#78E205;">3 EASY STEPS</span>
+      </h2>
+      <p style="font-size:17px;color:rgba(255,255,255,0.65);max-width:500px;margin:0 auto;line-height:1.7;">
+        We make it simple. From first call to cool air in your home — we handle everything.
+      </p>
+    </div>
+
+    <!-- Connector line runs behind all 3 step icons -->
+    <div style="position:relative;" class="fade-up">
+      <div style="position:absolute;top:32px;left:calc(16.67% + 32px);right:calc(16.67% + 32px);height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.5),rgba(120,226,5,0.15) 50%,rgba(120,226,5,0.5));pointer-events:none;"></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+
+        <!-- Step 1 -->
+        <div style="text-align:center;">
+          <div style="display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
+            <div style="width:64px;height:64px;border-radius:20px;background:#1A1F18;border:2px solid rgba(120,226,5,0.4);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #1A1F18;">
+              <span style="font-family:'Bebas Neue';font-size:28px;color:#78E205;line-height:1;">01</span>
+            </div>
+          </div>
+          <h3 style="font-family:'Bebas Neue';font-size:24px;color:#fff;letter-spacing:0.03em;margin-bottom:12px;">CALL OR BOOK ONLINE</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7;max-width:260px;margin:0 auto;">
+            Reach us by phone or fill out our quick online form. Tell us what's going on — we'll find the right time for you.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div style="text-align:center;">
+          <div style="display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
+            <div style="width:64px;height:64px;border-radius:20px;background:#1A1F18;border:2px solid rgba(120,226,5,0.4);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #1A1F18;">
+              <span style="font-family:'Bebas Neue';font-size:28px;color:#78E205;line-height:1;">02</span>
+            </div>
+          </div>
+          <h3 style="font-family:'Bebas Neue';font-size:24px;color:#fff;letter-spacing:0.03em;margin-bottom:12px;">WE DIAGNOSE & QUOTE</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7;max-width:260px;margin:0 auto;">
+            Our certified tech arrives on time, inspects your system, and gives you a clear upfront price — no hidden fees, ever.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div style="text-align:center;">
+          <div style="display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative;z-index:1;">
+            <div style="width:64px;height:64px;border-radius:20px;background:#1A1F18;border:2px solid #78E205;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #1A1F18,0 0 20px rgba(120,226,5,0.2);">
+              <span style="font-family:'Bebas Neue';font-size:28px;color:#78E205;line-height:1;">03</span>
+            </div>
+          </div>
+          <h3 style="font-family:'Bebas Neue';font-size:24px;color:#fff;letter-spacing:0.03em;margin-bottom:12px;">RELAX IN COMFORT</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.45);line-height:1.7;max-width:260px;margin:0 auto;">
+            We complete the work cleanly and efficiently. You approve, we clean up, and you enjoy your perfectly comfortable home.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Refrigerant Transition Notice -->
+<section style="background:#1a2540;padding:52px 24px;">
+  <div style="max-width:960px;margin:0 auto;text-align:center;">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,40px);color:#fff;letter-spacing:0.02em;margin-bottom:24px;">Refrigerant Transition Notice</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.85;text-align:left;">We are fully prepared for the transition to the new refrigerants, R-454B and R32, in response to the upcoming regulatory changes. Our team has completed extensive training and is equipped with all the necessary tools and resources to handle these refrigerants. We are already well into the transition process, ensuring that we meet the government's January 1st deadline. Rest assured, we are committed to maintaining the highest standards of efficiency and environmental responsibility throughout this shift.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ PREMIER EXPERTS CONTENT ═══════════════════ -->
+<section style="background:#242B20;padding:72px 24px;">
+  <div style="max-width:960px;margin:0 auto;">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,3vw,42px);color:#78E205;letter-spacing:0.01em;margin-bottom:28px;line-height:1.1;">The Premier Experts for Air Conditioning in Houston, TX</h2>
+
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:18px;">Texas is famous for its intense heat and humidity. Kool Life Air &amp; Heat is here to make your home comfortable in any weather. Since 2014, Kool Life has been the premier service provider for heating and air conditioning in Houston, TX, and the surrounding communities.</p>
+
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:18px;">Kool Life Air &amp; Heat is proud to be a Trane Comfort Specialist, providing you with the highest quality service from our certified technicians. Your home is your castle, and we are here to help you stay comfortable in high humidity and extreme weather.</p>
+
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:40px;">You can trust that our family-owned and operated business will stand behind our work. We are glad to give you our complete customer satisfaction guarantee. Efficiency, affordability, and honesty are the cornerstones of Kool Life Air &amp; Heat.</p>
+
+    <!-- Areas We Serve -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#78E205;letter-spacing:0.04em;margin-bottom:12px;">Areas We Serve</h3>
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:14px;">Kool Life Air &amp; Heat is here for all of your HVAC needs. We serve these areas in the Greater Houston region:</p>
+    <ul style="list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 32px;margin-bottom:20px;max-width:480px;">
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Houston Heights</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Sugar Land</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Katy</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Pearland</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>The Woodlands</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Missouri City</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Friendswood</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>League City</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Cypress</li>
+      <li style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(255,255,255,0.7);"><span style="color:#78E205;font-size:16px;">•</span>Spring</li>
+    </ul>
+
+    <p style="font-size:15px;margin-bottom:40px;"><a href="/maintenance-plan.html" style="color:#78E205;text-decoration:none;font-weight:600;">Join our exclusive Maintenance Plan!</a> <span style="color:rgba(255,255,255,0.75);">You'll enjoy priority scheduling and special product discounts.</span></p>
+
+    <!-- Divider -->
+    <div style="height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.2),transparent);margin-bottom:40px;"></div>
+
+    <!-- Flexible Financing -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#78E205;letter-spacing:0.04em;margin-bottom:12px;">Flexible Financing</h3>
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;margin-bottom:40px;">We are pleased to offer our valued customers reliable flat rates and affordable financing. Kool Life Air &amp; Heat offers a 60-month, 0% APR financing program to qualified consumers. Contactless payments are also available on all our products and services.</p>
+
+    <!-- Divider -->
+    <div style="height:1px;background:linear-gradient(90deg,rgba(120,226,5,0.2),transparent);margin-bottom:40px;"></div>
+
+    <!-- For All Your AC Needs -->
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:26px;color:#78E205;letter-spacing:0.04em;margin-bottom:12px;">For All Your Air Conditioning Needs, Turn to Kool Life Air &amp; Heat</h3>
+    <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.85;">Whether you need an estimate on air conditioning repair or a brand new HVAC system, Kool Life Air &amp; Heat delivers. We are proud to serve the greater Houston community and strive to serve you for many years to come.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+<section id="testimonials" class="section-bg" style="padding:100px 24px;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:64px;" class="fade-up">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+        <span style="font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em;">REAL REVIEWS</span>
+      </div>
+      <h2 style="font-family:'Bebas Neue';font-size:clamp(42px,5vw,68px);color:#fff;line-height:1;letter-spacing:-0.01em;margin-bottom:16px;">
+        WHAT OUR CUSTOMERS <span style="color:#78E205;">SAY</span>
+      </h2>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;">
+        <div class="stars" style="font-size:18px;margin-bottom:16px;">★★★★★</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:24px;">
+          "AC went out on a Friday night. Kool Life had a tech out within 2 hours. Fixed it on the spot, fair price, no surprises. These guys are the real deal."
+        </p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#78E205,#4A9200);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:18px;color:#1A1F18;">M</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#fff;">Marcus T.</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">Houston Heights</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;">
+        <div class="stars" style="font-size:18px;margin-bottom:16px;">★★★★★</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:24px;">
+          "Best HVAC company in Houston. Professional, on time, and explained everything clearly. The maintenance plan has already saved us from two potential breakdowns."
+        </p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6EC6F5,#3A7ACC);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:18px;color:#fff;">S</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#fff;">Sarah & James K.</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">Sugar Land</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-hover fade-up" style="background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;">
+        <div class="stars" style="font-size:18px;margin-bottom:16px;">★★★★★</div>
+        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.75;margin-bottom:24px;">
+          "Had a new Carrier system installed last spring. The crew was fast, respectful of my home, and cleaned up perfectly. My electric bill dropped 30%. Highly recommend!"
+        </p>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#D93B3B,#8A1515);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue';font-size:18px;color:#fff;">R</div>
+          <div>
+            <div style="font-size:14px;font-weight:700;color:#fff;">Rosa M.</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:2px;">Katy</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Google rating bar -->
+    <div style="margin-top:48px;background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:20px;padding:32px;display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap;" class="fade-up">
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue';font-size:56px;color:#78E205;line-height:1;">4.9</div>
+        <div class="stars" style="font-size:20px;margin:4px 0;">★★★★★</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.4);">Average Rating</div>
+      </div>
+      <div style="width:1px;height:80px;background:rgba(255,255,255,0.08);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue';font-size:56px;color:#fff;line-height:1;">500<span style="color:rgba(255,255,255,0.3);font-size:32px;">+</span></div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.4);margin-top:8px;">Verified Reviews</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:8px;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.12 12.5c0 2.927-1.938 4.976-4.82 4.976-2.755 0-4.99-2.243-4.99-5.007S9.545 7.473 12.3 7.473c1.346 0 2.472.5 3.34 1.31l-1.35 1.303c-.37-.357-.997-.77-1.99-.77-1.706 0-3.1 1.41-3.1 3.15s1.394 3.15 3.1 3.15c1.98 0 2.72-1.42 2.835-2.156h-2.835V12.5h5.82z"/></svg>
+          <span style="font-size:12px;color:rgba(255,255,255,0.4);">Google Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ CONTACT / CTA ═══════════════════ -->
+<section id="contact" class="dark-bg" style="padding:100px 24px;">
+  <div style="max-width:960px;margin:0 auto;">
+    <div style="background:linear-gradient(135deg,#242B20 0%,#151A12 100%);border:1px solid rgba(120,226,5,0.15);border-radius:28px;padding:clamp(40px,6vw,80px);position:relative;overflow:hidden;">
+
+      <!-- Background decorations -->
+      <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(120,226,5,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+      <div style="position:absolute;bottom:-60px;left:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(217,59,59,0.06) 0%,transparent 70%);pointer-events:none;"></div>
+
+      <div style="position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+
+        <!-- Left: Copy -->
+        <div class="fade-up">
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:6px 18px;margin-bottom:20px;">
+            <span style="font-size:12px;font-weight:700;color:#78E205;letter-spacing:0.1em;">GET STARTED</span>
+          </div>
+          <h2 style="font-family:'Bebas Neue';font-size:clamp(38px,5vw,58px);color:#fff;line-height:1;letter-spacing:-0.01em;margin-bottom:16px;">
+            READY FOR PERFECT<br><span style="color:#78E205;">COMFORT?</span>
+          </h2>
+          <p style="font-size:16px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:32px;">
+            Get your free quote today. No pressure, no obligation. Our team is ready to help.
+          </p>
+
+          <!-- Contact methods -->
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <a href="tel:+13212076757" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(120,226,5,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(120,226,5,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.08em;margin-bottom:2px;">CALL US 24/7</div>
+                <div style="font-size:17px;font-weight:700;color:#fff;">321-207-6757</div>
+              </div>
+            </a>
+            <a href="mailto:info@koollifeairandheat.com" style="display:flex;align-items:center;gap:14px;padding:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(120,226,5,0.3)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(120,226,5,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.35);font-weight:600;letter-spacing:0.08em;margin-bottom:2px;">EMAIL US</div>
+                <div style="font-size:15px;font-weight:600;color:#fff;">info@koollifeairandheat.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="fade-up">
+          <form style="display:flex;flex-direction:column;gap:16px;" onsubmit="handleSubmit(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">FIRST NAME</label>
+                <input type="text" placeholder="John" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(120,226,5,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+              </div>
+              <div>
+                <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">LAST NAME</label>
+                <input type="text" placeholder="Smith" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(120,226,5,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">PHONE NUMBER</label>
+              <input type="tel" placeholder="(555) 000-0000" required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s ease;" onfocus="this.style.borderColor='rgba(120,226,5,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" />
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">SERVICE NEEDED</label>
+              <select required style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s ease;cursor:pointer;" onfocus="this.style.borderColor='rgba(120,226,5,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
+                <option value="" style="background:#242B20;">Select a service…</option>
+                <option value="ac-install" style="background:#242B20;">AC Installation / Replacement</option>
+                <option value="ac-repair" style="background:#242B20;">AC Repair</option>
+                <option value="heating-install" style="background:#242B20;">Heating Installation</option>
+                <option value="heating-repair" style="background:#242B20;">Heating Repair</option>
+                <option value="maintenance" style="background:#242B20;">Maintenance Plan</option>
+                <option value="emergency" style="background:#242B20;">Emergency Service</option>
+                <option value="other" style="background:#242B20;">Other / Not Sure</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">MESSAGE (OPTIONAL)</label>
+              <textarea placeholder="Describe your issue or ask a question…" rows="3" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:12px 16px;font-size:14px;color:#fff;outline:none;resize:vertical;transition:border-color 0.2s ease;font-family:inherit;" onfocus="this.style.borderColor='rgba(120,226,5,0.4)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="btn-primary glow-green" style="width:100%;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:16px;border-radius:10px;border:none;cursor:pointer;letter-spacing:0.02em;">
+              Request Free Quote →
+            </button>
+            <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;line-height:1.6;">
+              By submitting, you agree to be contacted regarding your HVAC needs. We never share your information.
+            </p>
+          </form>
+          <div id="success-msg" style="display:none;text-align:center;padding:32px;">
+            <div style="font-size:48px;margin-bottom:16px;">✅</div>
+            <div style="font-family:'Bebas Neue';font-size:28px;color:#78E205;margin-bottom:8px;">WE'LL BE IN TOUCH!</div>
+            <p style="font-size:14px;color:rgba(255,255,255,0.65);">Thanks for reaching out. One of our team members will call you within the hour.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div id="site-footer-placeholder" style="display:none"></div>
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer style="background:#0A0B0A;border-top:1px solid rgba(255,255,255,0.05);padding:60px 24px 32px;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+
+      <!-- Brand column -->
+      <div>
+        <img src="BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" style="height:48px;width:auto;margin-bottom:20px;" alt="Kool Life Air & Heat" />
+        <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.75;max-width:280px;margin-bottom:24px;">
+          Houston's trusted HVAC experts since 2014. Keeping families comfortable through every season.
+        </p>
+        <div style="display:flex;gap:12px;">
+          <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Google" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s ease;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.12 12.5c0 2.927-1.938 4.976-4.82 4.976-2.755 0-4.99-2.243-4.99-5.007S9.545 7.473 12.3 7.473c1.346 0 2.472.5 3.34 1.31l-1.35 1.303c-.37-.357-.997-.77-1.99-.77-1.706 0-3.1 1.41-3.1 3.15s1.394 3.15 3.1 3.15c1.98 0 2.72-1.42 2.835-2.156h-2.835V12.5h5.82z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:20px;">SERVICES</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">AC Installation</a>
+          <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">AC Repair</a>
+          <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Heating Systems</a>
+          <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Maintenance Plans</a>
+          <a href="#services" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Emergency Service</a>
+        </div>
+      </div>
+
+      <!-- Company -->
+      <div>
+        <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:20px;">COMPANY</div>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <a href="#why-us" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">About Us</a>
+          <a href="#testimonials" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Reviews</a>
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Service Areas</a>
+          <a href="#" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Blog</a>
+          <a href="#contact" style="font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Contact</a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.1em;margin-bottom:20px;">CONTACT</div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <a href="tel:+13212076757" style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.02 1.22 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            321-207-6757
+          </a>
+          <a href="mailto:info@koollifeairandheat.com" style="display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s ease;word-break:break-all;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            info@koollifeairandheat.com
+          </a>
+          <div style="display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.65);">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-top:2px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Houston, TX &amp;<br>Surrounding Areas
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom:28px;"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <p style="font-size:13px;color:rgba(255,255,255,0.25);">© 2026 Kool Life Air & Heat. All rights reserved.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="#" style="font-size:13px;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Privacy Policy</a>
+        <a href="#" style="font-size:13px;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.2s ease;" onmouseover="this.style.color='rgba(255,255,255,0.75)'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/nav.js"></script>
+<!-- ═══════════════════ JAVASCRIPT ═══════════════════ -->
+<script>
+  // Scroll animations
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      e.target.style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }, 800);
+  }
+
+  // Responsive grid for stats
+  function handleResize() {
+    const statsGrid = document.querySelector('[data-stats]');
+  }
+</script>
+
+</body>
+</html>
