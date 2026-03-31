@@ -298,7 +298,7 @@
 </section>
 <footer style="background:#0A0B0A;border-top:1px solid rgba(255,255,255,0.05);padding:60px 24px 32px;font-family:Inter,sans-serif;">
   <div style="max-width:1280px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
+    <div class="kl-footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
       <div>
         <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" style="height:48px;width:auto;margin-bottom:20px;border-radius:8px;" alt="Kool Life Air &amp; Heat" />
         <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.75;max-width:280px;margin-bottom:24px;">Houston's trusted HVAC experts since 2014. Keeping families comfortable through every season.</p>
@@ -449,6 +449,15 @@
 
   setTimeout(() => { splash.classList.add('hide'); }, 1400);
   setTimeout(() => { splash.remove(); }, 2100);
+
+  // Inject mobile stylesheet on every page
+  if (!document.getElementById('kl-mobile-css')) {
+    const link = document.createElement('link');
+    link.id = 'kl-mobile-css';
+    link.rel = 'stylesheet';
+    link.href = '/mobile.css';
+    document.head.appendChild(link);
+  }
 
   // Inject nav
   const navEl = document.getElementById('site-nav');

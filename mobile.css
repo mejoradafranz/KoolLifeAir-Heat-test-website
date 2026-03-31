@@ -1,0 +1,104 @@
+/* ── Kool Life Air & Heat — Mobile Responsive Overrides ──────────────── */
+/* Injected on every page via nav.js                                        */
+
+@media (max-width: 768px) {
+
+  /* ── Hero section ── */
+  .kl-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    padding: 40px 20px 60px !important;
+  }
+  /* Hide the decorative image card on mobile — saves space */
+  .kl-hero-img {
+    display: none !important;
+  }
+  /* Hide the floating "10+ years" badge card */
+  .kl-hero-float {
+    display: none !important;
+  }
+
+  /* ── Stats bar: 4 cols → 2×2 ── */
+  .kl-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 16px 20px !important;
+  }
+
+  /* ── Maintenance plans: 3 cols → 1 col ── */
+  .kl-plans-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Remove the "lift" effect on the popular plan card */
+  .kl-plans-grid > div:nth-child(2) {
+    transform: none !important;
+  }
+
+  /* ── Best deals: 4 cols → 2×2 ── */
+  .kl-deals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* ── Services category grid: 3 cols → 1 col ── */
+  .kl-svc-cat-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix border-radius when stacked vertically */
+  .kl-svc-cat-grid > div:first-child {
+    border-radius: 16px 16px 0 0 !important;
+  }
+  .kl-svc-cat-grid > div:nth-child(2) {
+    border-radius: 0 !important;
+  }
+  .kl-svc-cat-grid > div:last-child {
+    border-radius: 0 0 16px 16px !important;
+  }
+
+  /* ── Why Choose Us: 2 cols → 1 col ── */
+  .kl-why-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  /* ── How It Works steps: 3 cols → 1 col ── */
+  .kl-steps-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  /* Hide the horizontal connector line between steps */
+  .kl-steps-grid + * .step-connector,
+  .kl-steps-line {
+    display: none !important;
+  }
+
+  /* ── Footer links grid: 4 cols → 2×2 ── */
+  .kl-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 24px !important;
+  }
+
+  /* ── Brands bar: reduce gap ── */
+  .kl-brands-bar {
+    gap: 32px !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  /* ── Best deals: 2 cols → 1 col on tiny screens ── */
+  .kl-deals-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Footer: 2 cols → 1 col on tiny screens ── */
+  .kl-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ── Stats bar: stays 2×2, adjust font ── */
+  .kl-stats-grid .stat-num {
+    font-size: 36px !important;
+  }
+
+}
