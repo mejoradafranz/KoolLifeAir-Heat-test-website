@@ -301,7 +301,7 @@
     <div class="kl-footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
       <div>
         <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" style="height:48px;width:auto;margin-bottom:20px;border-radius:8px;" alt="Kool Life Air &amp; Heat" />
-        <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.75;max-width:280px;margin-bottom:24px;">Houston's trusted HVAC experts since 2014. Keeping families comfortable through every season.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.75;max-width:280px;margin-bottom:24px;">Orlando's trusted HVAC experts since 2014. Keeping families comfortable through every season.</p>
         <div style="display:flex;gap:10px;">
           <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="rgba(255,255,255,0.4)"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
@@ -337,7 +337,7 @@
         <div style="display:flex;flex-direction:column;gap:12px;">
           <a href="tel:+13212076757" style="font-size:14px;font-weight:700;color:#78E205;text-decoration:none;">321-207-6757</a>
           <a href="mailto:info@koollifeairandheat.com" style="font-size:13px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">info@koollifeairandheat.com</a>
-          <span style="font-size:13px;color:rgba(255,255,255,0.4);">Houston, TX &amp; Surrounding Areas</span>
+          <span style="font-size:13px;color:rgba(255,255,255,0.4);">Orlando, FL &amp; Surrounding Areas</span>
           <a href="/schedule-service.html" style="display:inline-block;background:#78E205;color:#1A1F18;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;text-align:center;margin-top:4px;">Schedule Service</a>
         </div>
       </div>
@@ -405,7 +405,7 @@
     </style>
     <img id="kl-splash-logo" src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" />
     <div id="kl-splash-name">KOOL LIFE AIR & HEAT</div>
-    <div id="kl-splash-sub">Houston, TX · Since 2014</div>
+    <div id="kl-splash-sub">Orlando, FL · Since 2014</div>
     <div id="kl-splash-bar-track"><div id="kl-splash-bar"></div></div>
   `;
   document.body.prepend(splash);
