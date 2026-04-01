@@ -545,4 +545,34 @@
       });
     }
   });
+
+  // Plan card hover + touch glow & lift effects
+  const planGlows = [
+    { shadow: 'rgba(180,80,0,0.55)',   border: '2px solid rgba(200,100,0,0.8)'   }, // Bronze
+    { shadow: 'rgba(192,192,192,0.4)', border: '2px solid rgba(200,200,200,0.7)' }, // Silver
+    { shadow: 'rgba(255,215,0,0.5)',   border: '2px solid rgba(255,215,0,0.9)'   }, // Gold
+  ];
+  document.querySelectorAll('.kl-plans-grid > div').forEach((card, i) => {
+    const glow = planGlows[i] || planGlows[2];
+    const isGold = i === 2;
+    const baseTransform = isGold ? 'translateY(-8px)' : 'translateY(0)';
+    card.style.transition = 'transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease';
+    card.style.cursor = 'pointer';
+
+    function activate() {
+      card.style.transform = isGold ? 'translateY(-16px) scale(1.03)' : 'translateY(-12px) scale(1.03)';
+      card.style.boxShadow = `0 32px 72px ${glow.shadow}`;
+      card.style.border = glow.border;
+    }
+    function deactivate() {
+      card.style.transform = baseTransform;
+      card.style.boxShadow = '';
+      card.style.border = '';
+    }
+
+    card.addEventListener('mouseenter', activate);
+    card.addEventListener('mouseleave', deactivate);
+    card.addEventListener('touchstart', activate, { passive: true });
+    card.addEventListener('touchend', deactivate, { passive: true });
+  });
 })();
