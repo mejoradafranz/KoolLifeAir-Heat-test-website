@@ -164,6 +164,7 @@
         <ul class="kl-dropdown">
           <li><a href="/air-purification.html">Air Purification Systems</a></li>
           <li><a href="/ultraviolet-lights.html">Ultraviolet Lights</a></li>
+          <li><a href="/whole-house-dehumidifier.html">Whole House Dehumidifier</a></li>
         </ul>
       </li>
       <li><a href="/commercial.html">Commercial</a></li>
@@ -232,6 +233,7 @@
         <ul class="kl-mobile-sub">
           <li><a href="/air-purification.html">Air Purification Systems</a></li>
           <li><a href="/ultraviolet-lights.html">Ultraviolet Lights</a></li>
+          <li><a href="/whole-house-dehumidifier.html">Whole House Dehumidifier</a></li>
         </ul>
       </li>
       <li><a href="/commercial.html">Commercial</a></li>

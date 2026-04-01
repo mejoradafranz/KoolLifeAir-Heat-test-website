@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whole House Dehumidifier — Kool Life Air & Heat | Orlando, FL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:#1A1F18;color:#fff;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+    .page-hero{min-height:420px;display:flex;align-items:center;padding:120px 24px 80px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(110,198,245,0.12) 0%,transparent 70%),#1A1F18;position:relative}
+    .page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.2) 30%,rgba(120,226,5,0.2) 70%,transparent)}
+    .container{max-width:1280px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:20px}
+    .breadcrumb a{color:rgba(255,255,255,0.35);text-decoration:none}.breadcrumb a:hover{color:#78E205}
+    .badge{display:inline-flex;align-items:center;background:rgba(110,198,245,0.1);border:1px solid rgba(110,198,245,0.25);border-radius:100px;padding:6px 18px;margin-bottom:20px;font-size:12px;font-weight:700;color:#6EC6F5;letter-spacing:0.1em}
+    h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5.5vw,76px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:20px}
+    .lead{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.7);max-width:600px;margin-bottom:36px}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:#78E205;color:#1A1F18;font-size:15px;font-weight:700;padding:14px 28px;border-radius:10px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(120,226,5,0.3)}
+    .btn-outline{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);color:#fff;font-size:15px;font-weight:600;padding:14px 28px;border-radius:10px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:background 0.2s}
+    .btn-outline:hover{background:rgba(255,255,255,0.1)}
+    section{padding:80px 24px}
+    .section-label{display:inline-flex;align-items:center;background:rgba(120,226,5,0.08);border:1px solid rgba(120,226,5,0.2);border-radius:100px;padding:5px 16px;font-size:11px;font-weight:700;color:#78E205;letter-spacing:0.1em;margin-bottom:16px}
+    h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,3.5vw,52px);line-height:1;letter-spacing:-0.01em;margin-bottom:16px}
+    .card{background:#242B20;border:1px solid rgba(120,226,5,0.1);border-radius:18px;padding:28px}
+    .features-list{display:flex;flex-direction:column;gap:14px;list-style:none}
+    .features-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6}
+    .check{width:20px;height:20px;border-radius:50%;background:rgba(120,226,5,0.12);border:1px solid rgba(120,226,5,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+    .step{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .step:last-child{border-bottom:none}
+    .step-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:#78E205;line-height:1;min-width:40px}
+    .step h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;margin-bottom:6px}
+    .step p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.7}
+    .problem-card{background:#242B20;border:1px solid rgba(110,198,245,0.2);border-radius:16px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+    .problem-icon{font-size:28px;flex-shrink:0}
+    .problem-card h3{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.03em;margin-bottom:6px}
+    .problem-card p{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65}
+    .benefit-card{background:#1E2419;border:1px solid rgba(120,226,5,0.12);border-radius:16px;padding:24px;text-align:center}
+    .benefit-icon{font-size:36px;margin-bottom:14px}
+    .benefit-card h3{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.05em;margin-bottom:8px}
+    .benefit-card p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.65}
+    .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
+    @media(max-width:768px){.two-col{grid-template-columns:1fr !important}.three-col{grid-template-columns:1fr !important}}
+  </style>
+</head>
+<body>
+<div id="site-nav"></div>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/indoor-air-quality.html">Indoor Air Quality</a> › Whole House Dehumidifier</div>
+    <div class="badge">💧 &nbsp;WHOLE HOUSE DEHUMIDIFIER</div>
+    <h1>WHOLE HOUSE<br><span style="color:#6EC6F5;">DEHUMIDIFIER</span></h1>
+    <p class="lead">Florida's humidity doesn't stop at your front door. A whole-house dehumidifier integrates directly with your HVAC system to keep every room in your Orlando home at the perfect moisture level — improving comfort, protecting your home, and improving the air you breathe.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px">
+      <a href="/free-estimates.html" class="btn-primary">Get Free Estimate</a>
+      <a href="tel:+13212076757" class="btn-outline">📞 321-207-6757</a>
+    </div>
+  </div>
+</div>
+
+<!-- Intro -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+      <div>
+        <div class="section-label">WHY IT MATTERS</div>
+        <h2>TOO MUCH HUMIDITY IS A REAL PROBLEM IN ORLANDO</h2>
+        <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.7);margin-bottom:20px">
+          Florida consistently ranks among the most humid states in the country. When indoor humidity exceeds 60%, your home becomes a breeding ground for mold, mildew, dust mites, and allergens — even if your AC is running perfectly.
+        </p>
+        <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.7);margin-bottom:20px">
+          Portable dehumidifiers only treat one room at a time and require constant emptying. A whole-house dehumidifier works automatically with your existing HVAC system to maintain ideal humidity levels throughout your entire home — without you lifting a finger.
+        </p>
+        <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.7)">
+          Kool Life Air & Heat installs and services whole-house dehumidifiers throughout Orlando, FL and the surrounding areas, including Apopka, Kissimmee, Sanford, and Ocoee.
+        </p>
+      </div>
+      <div class="card" style="padding:40px">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.05em;margin-bottom:24px;color:#6EC6F5">IDEAL INDOOR HUMIDITY</div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07)">
+            <span style="font-size:14px;color:rgba(255,255,255,0.6)">Recommended Level</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#78E205">30–50%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.07)">
+            <span style="font-size:14px;color:rgba(255,255,255,0.6)">Florida Average (Summer)</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#D9503B">70–90%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:14px;color:rgba(255,255,255,0.6)">Mold Risk Threshold</span>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:#D9503B">Above 60%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Signs You Need One -->
+<section style="background:#161B13">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="section-label" style="margin:0 auto 16px">WARNING SIGNS</div>
+      <h2>SIGNS YOUR HOME NEEDS A<br><span style="color:#6EC6F5;">WHOLE-HOUSE DEHUMIDIFIER</span></h2>
+      <p style="font-size:15px;color:rgba(255,255,255,0.6);max-width:560px;margin:0 auto;line-height:1.7">If you notice any of these in your Orlando home, excess humidity may be to blame.</p>
+    </div>
+    <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div class="problem-card">
+        <div class="problem-icon">🤧</div>
+        <div>
+          <h3>Allergy & Asthma Flare-Ups</h3>
+          <p>High humidity encourages dust mites and mold spores, which are the top triggers for respiratory issues indoors.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🍄</div>
+        <div>
+          <h3>Musty Odors or Visible Mold</h3>
+          <p>A persistent musty smell — especially in bathrooms, closets, or the garage — signals active mold or mildew growth.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💦</div>
+        <div>
+          <h3>Condensation on Windows</h3>
+          <p>Water droplets forming on your interior windows are a classic sign that indoor humidity is too high.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🪵</div>
+        <div>
+          <h3>Warping Wood or Flooring</h3>
+          <p>Wood floors, cabinets, and furniture expand and warp when exposed to excess moisture over time.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🥵</div>
+        <div>
+          <h3>Feeling Sticky & Uncomfortable</h3>
+          <p>If your home still feels clammy even with the AC running, moisture in the air is outpacing your system's ability to remove it.</p>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⚡</div>
+        <div>
+          <h3>High Energy Bills</h3>
+          <p>When humidity is high, your AC works harder and longer to make the space feel comfortable, driving up your monthly energy costs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section style="background:#1A1F18">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:52px">
+      <div class="section-label" style="margin:0 auto 16px">THE BENEFITS</div>
+      <h2>WHAT A WHOLE-HOUSE DEHUMIDIFIER<br><span style="color:#78E205;">DOES FOR YOU</span></h2>
+    </div>
+    <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:60px">
+      <div class="benefit-card">
+        <div class="benefit-icon">🌬️</div>
+        <h3>CLEANER AIR</h3>
+        <p>Reduces mold spores, dust mites, and allergens circulating through your home's air supply.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏠</div>
+        <h3>PROTECTS YOUR HOME</h3>
+        <p>Prevents wood rot, paint peeling, and structural damage caused by long-term moisture exposure.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>LOWER ENERGY BILLS</h3>
+        <p>Less strain on your AC system means lower monthly utility costs — especially during Florida summers.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">😴</div>
+        <h3>BETTER SLEEP</h3>
+        <p>Balanced humidity promotes better sleep quality by making the air feel cooler and more comfortable at night.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🤖</div>
+        <h3>FULLY AUTOMATIC</h3>
+        <p>Set your target humidity level once. The system maintains it automatically — no filters to empty, no manual adjustments.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🏡</div>
+        <h3>WHOLE-HOME COVERAGE</h3>
+        <p>Treats every room simultaneously through your existing ductwork — unlike portable units that only cover one area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How We Install It -->
+<section style="background:#161B13">
+  <div class="container">
+    <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+      <div>
+        <div class="section-label">OUR PROCESS</div>
+        <h2>HOW KOOL LIFE INSTALLS YOUR<br><span style="color:#6EC6F5;">DEHUMIDIFIER</span></h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:32px">
+          We make installation simple and non-disruptive. Most whole-house dehumidifier installations are completed in a single visit.
+        </p>
+        <div>
+          <div class="step">
+            <div class="step-num">01</div>
+            <div>
+              <h3>IN-HOME ASSESSMENT</h3>
+              <p>We inspect your home's size, current HVAC system, existing humidity levels, and ductwork to recommend the right unit and capacity for your space.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">02</div>
+            <div>
+              <h3>UNIT SELECTION</h3>
+              <p>We help you choose from top-rated whole-house dehumidifier brands sized correctly for your square footage and Florida's climate demands.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">03</div>
+            <div>
+              <h3>DUCTWORK INTEGRATION</h3>
+              <p>The dehumidifier is connected directly to your existing duct system so treated, dry air flows to every room in the house automatically.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">04</div>
+            <div>
+              <h3>DRAIN LINE SETUP</h3>
+              <p>We install a dedicated condensate drain line so collected moisture is routed out of your home — no drip trays, no emptying required.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-num">05</div>
+            <div>
+              <h3>CALIBRATION & WALKTHROUGH</h3>
+              <p>We set your humidity control to the ideal range, test the full system, and walk you through how to adjust settings as needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="card" style="border-color:rgba(110,198,245,0.2)">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.05em;margin-bottom:18px;color:#6EC6F5">WHY CHOOSE KOOL LIFE</div>
+          <ul class="features-list">
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Licensed & insured HVAC technicians in Orlando, FL
+            </li>
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Free in-home estimates — no surprises on pricing
+            </li>
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Top-rated dehumidifier brands: Aprilaire, Honeywell, Santa Fe
+            </li>
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Manufacturer warranty on all installed equipment
+            </li>
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Ongoing maintenance & service plans available
+            </li>
+            <li>
+              <span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78E205" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+              Serving Orlando, Apopka, Kissimmee, Sanford & surrounding areas
+            </li>
+          </ul>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(120,226,5,0.08),rgba(110,198,245,0.06));border:1px solid rgba(120,226,5,0.2);border-radius:18px;padding:28px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.05em;margin-bottom:12px">DID YOU KNOW?</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.75">
+            A properly sized whole-house dehumidifier can remove <strong style="color:#78E205">50–150 pints of water per day</strong> from your home's air — that's water that would otherwise condense on your walls, furniture, and lungs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Band -->
+<div class="cta-band">
+  <div class="container">
+    <div class="section-label" style="margin:0 auto 20px">GET STARTED TODAY</div>
+    <h2 style="margin-bottom:16px">BREATHE EASIER.<br><span style="color:#78E205;">LIVE COMFORTABLY.</span></h2>
+    <p style="font-size:16px;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto 36px;line-height:1.75">
+      Stop letting Florida's humidity control your comfort. Let Kool Life Air & Heat install the right whole-house dehumidifier for your Orlando home.
+    </p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+      <a href="/free-estimates.html" class="btn-primary" style="font-size:16px;padding:16px 36px">Get Free Estimate</a>
+      <a href="tel:+13212076757" class="btn-outline" style="font-size:16px;padding:16px 36px">📞 321-207-6757</a>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+</body>
+</html>
