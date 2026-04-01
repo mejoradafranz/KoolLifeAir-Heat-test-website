@@ -144,6 +144,7 @@
           <li><a href="/ac-repair.html">AC Repair</a></li>
           <li><a href="/ductless-mini-splits.html">Ductless Mini-Splits</a></li>
           <li><a href="/heat-pumps.html">Heat Pumps</a></li>
+          <li><a href="/ductwork-replacement.html">Ductwork Replacement</a></li>
         </ul>
       </li>
       <li>
@@ -215,6 +216,7 @@
           <li><a href="/ac-repair.html">AC Repair</a></li>
           <li><a href="/ductless-mini-splits.html">Ductless Mini-Splits</a></li>
           <li><a href="/heat-pumps.html">Heat Pumps</a></li>
+          <li><a href="/ductwork-replacement.html">Ductwork Replacement</a></li>
         </ul>
       </li>
       <li>
