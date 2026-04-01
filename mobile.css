@@ -33,9 +33,9 @@
     transform: none !important;
   }
 
-  /* ── Best deals: 4 cols → 2×2 ── */
+  /* ── Best deals: 3 cols → 1 col ── */
   .kl-deals-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
 
@@ -86,10 +86,7 @@
 
 @media (max-width: 480px) {
 
-  /* ── Best deals: 2 cols → 1 col on tiny screens ── */
-  .kl-deals-grid {
-    grid-template-columns: 1fr !important;
-  }
+  /* ── Best deals: already 1 col ── */
 
   /* ── Footer: 2 cols → 1 col on tiny screens ── */
   .kl-footer-grid {
