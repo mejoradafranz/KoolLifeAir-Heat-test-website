@@ -37,7 +37,10 @@
     .benefit-item p{font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6}
     .cta-band{background:linear-gradient(135deg,#242B20,#151A12);border-top:1px solid rgba(120,226,5,0.1);padding:60px 24px;text-align:center}
     @keyframes goldShimmer { 0%,100%{background-position:200% 0} 50%{background-position:0% 0} }
-    @keyframes goldSheen { 0%{transform:translateX(-100%)} 60%,100%{transform:translateX(200%)} }
+    @keyframes goldSheen { 0%{transform:translateX(-100%) skewX(-15deg)} 60%,100%{transform:translateX(250%) skewX(-15deg)} }
+    @keyframes goldPulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,215,0,0.5),0 0 0 8px rgba(255,215,0,0.15),0 32px 80px rgba(255,215,0,0.5)} 50%{box-shadow:0 0 0 6px rgba(255,215,0,0.3),0 0 0 14px rgba(255,215,0,0.08),0 32px 100px rgba(255,215,0,0.7)} }
+    @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0) rotate(0deg)} 50%{opacity:1;transform:scale(1) rotate(180deg)} }
+    @keyframes float { 0%,100%{transform:translateY(-22px) scale(1.04)} 50%{transform:translateY(-26px) scale(1.04)} }
   </style>
 </head>
 <body>
@@ -150,29 +153,44 @@
         </div>
       </div>
 
-      <!-- Gold Plan (most popular) -->
-      <div style="border:2px solid rgba(255,215,0,0.9);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transform:translateY(-18px) scale(1.04);box-shadow:0 0 0 4px rgba(255,215,0,0.15),0 32px 80px rgba(255,215,0,0.45),0 8px 24px rgba(0,0,0,0.6);position:relative;z-index:2;">
-        <div style="background:linear-gradient(90deg,#7a5500,#FFD700,#7a5500);background-size:200% 100%;animation:goldShimmer 2.5s ease-in-out infinite;padding:16px;text-align:center;">
-          <div style="font-size:15px;font-weight:900;color:#1A1F18;letter-spacing:0.14em;text-transform:uppercase;">🏆 &nbsp;BEST VALUE — MOST POPULAR &nbsp;🏆</div>
-        </div>
-        <div style="background:linear-gradient(135deg,#4a3200,#9a7000,#FFD700);padding:24px;text-align:center;position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(255,255,255,0.08) 50%,transparent 60%);animation:goldSheen 3s ease-in-out infinite;"></div>
-          <div style="font-family:'Bebas Neue',sans-serif;font-size:30px;color:#fff;letter-spacing:0.1em;text-shadow:0 2px 12px rgba(0,0,0,0.5);position:relative;">✦ GOLD PLAN ✦</div>
-          <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,0.8);letter-spacing:0.1em;margin-top:4px;position:relative;">ULTIMATE PROTECTION</div>
-        </div>
-        <div style="background:linear-gradient(180deg,#2e2a1a,#242B20);padding:28px;flex:1;display:flex;flex-direction:column;">
-          <div style="font-weight:700;font-size:15px;color:#fff;margin-bottom:16px;">Benefits:</div>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maximized System Efficiency</li>
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Reduced Equipment Failures</li>
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Same Day Scheduling on all Service Calls received before 3pm</li>
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>Maintain a Valid Factory Parts Warranty (if applicable)</li>
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>2 visits per year: 1 comprehensive inspection &amp; 1 operational inspection</li>
-            <li style="display:flex;gap:10px;font-size:14px;color:rgba(120,226,5,0.85);line-height:1.5;"><span style="color:#78E205;font-size:16px;flex-shrink:0;">✔</span>15% Repair Discount</li>
-          </ul>
-          <div>
-            <div style="font-weight:700;font-size:14px;color:#fff;margin-bottom:8px;">Billing Cycle, choose from:</div>
-            <div style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Per System - $19.99 Monthly, $114.99 every 6 mo, or $219.99 Annually</div>
+      <!-- Gold Plan (Golden Ticket) -->
+      <div style="position:relative;z-index:2;animation:float 4s ease-in-out infinite;">
+        <div style="position:absolute;top:-10px;left:18px;font-size:18px;animation:sparkle 2s ease-in-out infinite;animation-delay:0s;pointer-events:none;">✨</div>
+        <div style="position:absolute;top:-14px;right:24px;font-size:22px;animation:sparkle 2s ease-in-out infinite;animation-delay:0.7s;pointer-events:none;">⭐</div>
+        <div style="position:absolute;top:10px;right:-8px;font-size:14px;animation:sparkle 2s ease-in-out infinite;animation-delay:1.4s;pointer-events:none;">✨</div>
+        <div style="border:3px solid #FFD700;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;animation:goldPulse 3s ease-in-out infinite;background:linear-gradient(160deg,#3a2600,#1a1200);">
+          <div style="background:linear-gradient(90deg,#5a3a00,#c8960c,#FFD700,#f5c518,#FFD700,#c8960c,#5a3a00);background-size:300% 100%;animation:goldShimmer 2s linear infinite;padding:12px 16px;text-align:center;border-bottom:2px dashed rgba(255,215,0,0.4);">
+            <div style="font-size:11px;font-weight:900;color:#3a1a00;letter-spacing:0.2em;text-transform:uppercase;">✦ &nbsp; GOLDEN TICKET &nbsp; ✦</div>
+          </div>
+          <div style="background:linear-gradient(160deg,#5a3a00 0%,#c8960c 40%,#FFD700 60%,#e8b800 80%,#a07000 100%);padding:28px 20px 20px;text-align:center;position:relative;overflow:hidden;">
+            <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,0.25) 50%,transparent 65%);animation:goldSheen 2.5s ease-in-out infinite;pointer-events:none;"></div>
+            <div style="position:absolute;top:-20px;left:-20px;width:100px;height:100px;border:2px solid rgba(255,255,255,0.08);border-radius:50%;pointer-events:none;"></div>
+            <div style="position:absolute;bottom:-30px;right:-20px;width:120px;height:120px;border:2px solid rgba(255,255,255,0.06);border-radius:50%;pointer-events:none;"></div>
+            <div style="font-size:11px;font-weight:800;color:rgba(60,30,0,0.85);letter-spacing:0.25em;margin-bottom:8px;position:relative;">KOOL LIFE AIR &amp; HEAT PRESENTS</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:46px;color:#3a1a00;letter-spacing:0.06em;line-height:1;text-shadow:0 2px 0 rgba(255,255,255,0.25),0 -1px 0 rgba(0,0,0,0.3);position:relative;">GOLD PLAN</div>
+            <div style="font-size:11px;font-weight:800;color:rgba(60,30,0,0.75);letter-spacing:0.2em;margin-top:8px;position:relative;">— ADMIT ONE —</div>
+          </div>
+          <div style="display:flex;align-items:center;background:#1a1200;padding:0 0;">
+            <div style="width:18px;height:18px;border-radius:50%;background:#1A1F18;flex-shrink:0;margin-left:-9px;border:1px solid rgba(255,215,0,0.3);"></div>
+            <div style="flex:1;border-top:2px dashed rgba(255,215,0,0.35);margin:0 4px;"></div>
+            <div style="font-size:10px;font-weight:800;color:#FFD700;letter-spacing:0.18em;white-space:nowrap;padding:8px 10px;opacity:0.7;">MOST POPULAR</div>
+            <div style="flex:1;border-top:2px dashed rgba(255,215,0,0.35);margin:0 4px;"></div>
+            <div style="width:18px;height:18px;border-radius:50%;background:#1A1F18;flex-shrink:0;margin-right:-9px;border:1px solid rgba(255,215,0,0.3);"></div>
+          </div>
+          <div style="background:linear-gradient(160deg,#1f1800,#1a1200);padding:24px 24px 20px;flex:1;display:flex;flex-direction:column;">
+            <div style="font-weight:700;font-size:13px;color:#FFD700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;border-bottom:1px solid rgba(255,215,0,0.15);padding-bottom:10px;">✦ &nbsp;This Ticket Entitles the Bearer To:</div>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px;flex:1;">
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Maximized System Efficiency</li>
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Reduced Equipment Failures</li>
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Same Day Scheduling on all Service Calls received before 3pm</li>
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Maintain a Valid Factory Parts Warranty (if applicable)</li>
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>2 visits per year: 1 comprehensive inspection &amp; 1 operational inspection</li>
+              <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>15% Repair Discount</li>
+            </ul>
+            <div style="border-top:1px dashed rgba(255,215,0,0.25);padding-top:16px;">
+              <div style="font-size:11px;font-weight:700;color:rgba(255,215,0,0.5);letter-spacing:0.12em;margin-bottom:6px;text-transform:uppercase;">Billing Cycle, choose from:</div>
+              <div style="font-size:13px;color:#FFD700;line-height:1.7;font-weight:600;">$19.99 Monthly &nbsp;·&nbsp; $114.99 / 6 mo &nbsp;·&nbsp; $219.99 Annually</div>
+            </div>
           </div>
         </div>
       </div>
