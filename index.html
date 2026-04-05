@@ -183,6 +183,16 @@
 
     /* Ping animation for CTA badge */
     @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+    @keyframes iceShimmer { 0%{background-position:200% 50%} 100%{background-position:-200% 50%} }
+    .ice-text {
+      background: linear-gradient(105deg, #a8edff 0%, #ffffff 18%, #c8f6ff 30%, #7dd8f0 42%, #ffffff 55%, #b0eeff 68%, #e0faff 80%, #7ecfea 100%);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: iceShimmer 4s linear infinite;
+      filter: drop-shadow(0 0 12px rgba(110,198,245,0.7)) drop-shadow(0 0 28px rgba(160,230,255,0.4));
+    }
     .ping { animation: ping 1.5s cubic-bezier(0,0,0.2,1) infinite; }
     @keyframes goldShimmer { 0%,100%{background-position:200% 0} 50%{background-position:0% 0} }
     @keyframes goldSheen { 0%{transform:translateX(-100%) skewX(-15deg)} 60%,100%{transform:translateX(250%) skewX(-15deg)} }
@@ -211,7 +221,7 @@
       <!-- Emergency badge -->
 
       <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,7vw,96px);line-height:0.95;letter-spacing:-0.02em;margin-bottom:24px;">
-        <span style="display:block;color:#fff;">STAY COOL.</span>
+        <span style="display:block;" class="ice-text">STAY COOL.</span>
         <span style="display:block;color:#78E205;" class="text-glow">STAY WARM.</span>
         <span style="display:block;color:rgba(255,255,255,0.65);">YEAR ROUND.</span>
       </h1>
