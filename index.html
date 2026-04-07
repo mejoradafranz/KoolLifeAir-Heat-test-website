@@ -204,8 +204,9 @@
     @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0) rotate(0deg)} 50%{opacity:1;transform:scale(1) rotate(180deg)} }
     @keyframes float { 0%,100%{transform:translateY(-22px) scale(1.04)} 50%{transform:translateY(-26px) scale(1.04)} }
     @keyframes ticketEdge { 0%,100%{background-position:0 0} 50%{background-position:100% 0} }
+    .kl-plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1100px;margin:0 auto;}
     @media(max-width:768px){
-      .kl-plans-grid{grid-template-columns:1fr !important;gap:40px !important;max-width:420px !important;}
+      .kl-plans-grid{grid-template-columns:1fr;gap:40px;max-width:420px;}
     }
   </style>
 </head>
@@ -371,7 +372,7 @@
 
   <!-- Plan cards -->
   <div style="background:#1A1F18;padding:60px 24px;">
-    <div class="kl-plans-grid" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:48px;">
+    <div class="kl-plans-grid">
 
       <!-- Climate Care Plan -->
       <div style="border:2px solid rgba(205,127,50,0.6);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;">
