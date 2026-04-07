@@ -423,17 +423,31 @@
       </div>
 
       <!-- Gold Plan -->
-      <div class="gold-card" style="border:2px solid rgba(255,215,0,0.8);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative;">
+      <div class="gold-card" style="border:3px solid #FFD700;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative;background:linear-gradient(160deg,#2a1d00,#1a1200);">
+        <!-- Sparkles -->
+        <span style="position:absolute;top:-10px;left:14px;font-size:16px;animation:sparkle 2s ease-in-out infinite;animation-delay:0s;pointer-events:none;z-index:3;">✨</span>
+        <span style="position:absolute;top:-13px;right:20px;font-size:20px;animation:sparkle 2s ease-in-out infinite;animation-delay:0.7s;pointer-events:none;z-index:3;">⭐</span>
+        <span style="position:absolute;top:12px;right:-6px;font-size:12px;animation:sparkle 2s ease-in-out infinite;animation-delay:1.3s;pointer-events:none;z-index:3;">✨</span>
+        <!-- Shimmer header -->
         <div style="background:linear-gradient(90deg,#5a3a00,#c8960c,#FFD700,#f5c518,#FFD700,#c8960c,#5a3a00);background-size:300% 100%;animation:goldShimmer 2s linear infinite;padding:24px;text-align:center;position:relative;overflow:hidden;">
           <div style="position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,0.3) 50%,transparent 65%);animation:headerSheen 2.5s ease-in-out infinite;pointer-events:none;"></div>
           <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#3a1a00;letter-spacing:0.08em;position:relative;">GOLD PLAN</div>
         </div>
-        <div style="background:#242B20;padding:28px;flex:1;display:flex;flex-direction:column;">
+        <!-- Tear line -->
+        <div style="display:flex;align-items:center;background:#1a1200;padding:0;">
+          <div style="width:16px;height:16px;border-radius:50%;background:#1A1F18;flex-shrink:0;margin-left:-8px;border:1px solid rgba(255,215,0,0.3);"></div>
+          <div style="flex:1;border-top:2px dashed rgba(255,215,0,0.4);margin:0 4px;"></div>
+          <div style="font-size:10px;font-weight:800;color:#FFD700;letter-spacing:0.18em;white-space:nowrap;padding:7px 10px;opacity:0.8;">★ MOST POPULAR ★</div>
+          <div style="flex:1;border-top:2px dashed rgba(255,215,0,0.4);margin:0 4px;"></div>
+          <div style="width:16px;height:16px;border-radius:50%;background:#1A1F18;flex-shrink:0;margin-right:-8px;border:1px solid rgba(255,215,0,0.3);"></div>
+        </div>
+        <!-- Body -->
+        <div style="background:linear-gradient(160deg,#1f1800,#1a1200);padding:28px;flex:1;display:flex;flex-direction:column;">
           <div style="text-align:center;padding:24px 0 12px;">
-            <div style="font-family:'Bebas Neue',sans-serif;font-size:80px;color:#FFD700;line-height:1;text-shadow:0 0 20px rgba(255,215,0,0.3);">$150</div>
-            <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-top:8px;letter-spacing:0.08em;text-transform:uppercase;">Plan Cost Every 6 Months</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:80px;color:#FFD700;line-height:1;text-shadow:0 0 20px rgba(255,215,0,0.5);">$150</div>
+            <div style="font-size:14px;color:rgba(255,215,0,0.6);margin-top:8px;letter-spacing:0.08em;text-transform:uppercase;">Plan Cost Every 6 Months</div>
           </div>
-          <div style="font-style:italic;font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:14px;text-align:center;">This is for semi-annual maintenance</div>
+          <div style="font-style:italic;font-size:13px;color:rgba(255,215,0,0.5);margin-bottom:14px;text-align:center;">This is for semi-annual maintenance</div>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;">
             <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>2 visits per year</li>
             <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Filters will be changed</li>
@@ -444,7 +458,7 @@
             <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>Brand new run capacitor professionally installed every year</li>
             <li style="display:flex;gap:10px;font-size:14px;color:rgba(255,220,100,0.9);line-height:1.5;"><span style="color:#FFD700;font-size:14px;flex-shrink:0;">★</span>10% discount on all repair jobs</li>
           </ul>
-          <div style="margin-top:20px;padding-top:16px;border-top:1px dashed rgba(255,215,0,0.25);font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6;font-style:italic;">This plan does not have an end date. However, at any time you are welcome to cancel — we just need 90 days notice.</div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px dashed rgba(255,215,0,0.25);font-size:12px;color:rgba(255,215,0,0.4);line-height:1.6;font-style:italic;">This plan does not have an end date. However, at any time you are welcome to cancel — we just need 90 days notice.</div>
         </div>
       </div>
 
