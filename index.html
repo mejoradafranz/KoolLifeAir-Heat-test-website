@@ -204,6 +204,9 @@
     @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0) rotate(0deg)} 50%{opacity:1;transform:scale(1) rotate(180deg)} }
     @keyframes float { 0%,100%{transform:translateY(-22px) scale(1.04)} 50%{transform:translateY(-26px) scale(1.04)} }
     @keyframes ticketEdge { 0%,100%{background-position:0 0} 50%{background-position:100% 0} }
+    @media(max-width:768px){
+      .kl-plans-grid{grid-template-columns:1fr !important;gap:40px !important;max-width:420px !important;}
+    }
   </style>
 </head>
 <body>
