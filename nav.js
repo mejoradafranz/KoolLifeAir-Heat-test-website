@@ -25,7 +25,7 @@
     height: 72px;
     display: flex; align-items: center; justify-content: space-between;
   }
-  .kl-logo img { height: 52px; width: auto; border-radius: 8px; box-shadow: 0 0 0 1px rgba(120,226,5,0.15); filter: brightness(1.15); }
+  .kl-logo img { height: 52px; width: auto; border-radius: 10px; background: #fff; padding: 4px 10px; }
   .kl-logo { text-decoration: none; }
 
   /* Desktop links */
@@ -131,7 +131,7 @@
 <nav id="kl-nav">
   <div class="kl-nav-inner">
     <a href="/" class="kl-logo">
-      <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life Air &amp; Heat" />
+      <img src="/BRAND_ASSETS/logoo.jpg" alt="Kool Life Air &amp; Heat" />
     </a>
 
     <ul class="kl-links">
@@ -304,7 +304,7 @@
   <div style="max-width:1280px;margin:0 auto;">
     <div class="kl-footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;flex-wrap:wrap;">
       <div>
-        <img src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" style="height:48px;width:auto;margin-bottom:20px;border-radius:8px;" alt="Kool Life Air &amp; Heat" />
+        <img src="/BRAND_ASSETS/logoo.jpg" style="height:60px;width:auto;margin-bottom:20px;" alt="Kool Life Air &amp; Heat" />
         <p style="font-size:14px;color:rgba(255,255,255,0.35);line-height:1.75;max-width:280px;margin-bottom:24px;">Orlando's trusted HVAC experts since 2014. Keeping families comfortable through every season.</p>
         <div style="display:flex;gap:10px;">
           <a href="#" aria-label="Facebook" style="width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;transition:border-color 0.2s;" onmouseover="this.style.borderColor='rgba(120,226,5,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
@@ -382,7 +382,7 @@
         to   { width: 100%; }
       }
       #kl-splash-logo {
-        width: 90px; height: 90px; object-fit: contain; border-radius: 16px;
+        width: 200px; height: auto; border-radius: 14px; background: #fff; padding: 8px 16px;
         animation: kl-fade-up 0.5s ease 0.1s both;
       }
       #kl-splash-name {
@@ -407,7 +407,7 @@
         animation: kl-bar-grow 0.8s ease 0.45s both;
       }
     </style>
-    <img id="kl-splash-logo" src="/BRAND_ASSETS/Gemini_Generated_Image_th5gidth5gidth5g.png" alt="Kool Life" />
+    <img id="kl-splash-logo" src="/BRAND_ASSETS/logoo.jpg" alt="Kool Life" />
     <div id="kl-splash-name">KOOL LIFE AIR & HEAT</div>
     <div id="kl-splash-sub">Orlando, FL · Since 2014</div>
     <div id="kl-splash-bar-track"><div id="kl-splash-bar"></div></div>
