@@ -340,7 +340,7 @@
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.1em;margin-bottom:18px;">CONTACT</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <a href="tel:+13212076757" style="font-size:14px;font-weight:700;color:#78E205;text-decoration:none;">321-207-6757</a>
-          <a href="mailto:info@koollifeairandheat.com" style="font-size:13px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">info@koollifeairandheat.com</a>
+          <a href="mailto:koollifeairheat@gmail.com" style="font-size:13px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">koollifeairheat@gmail.com</a>
           <span style="font-size:13px;color:rgba(255,255,255,0.4);">Orlando, FL &amp; Surrounding Areas</span>
           <a href="/schedule-service.html" style="display:inline-block;background:#78E205;color:#1A1F18;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;text-align:center;margin-top:4px;">Schedule Service</a>
         </div>
