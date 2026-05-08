@@ -348,7 +348,7 @@
     </div>
     <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.25) 30%,rgba(120,226,5,0.25) 70%,transparent);margin-bottom:24px;"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <p style="font-size:12px;color:rgba(255,255,255,0.2);margin:0;">© 2026 Kool Life Air &amp; Heat. All rights reserved. &nbsp;·&nbsp; v 1.0.1c</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.2);margin:0;">© 2026 Kool Life Air &amp; Heat. All rights reserved. &nbsp;·&nbsp; v 1.0.1d</p>
       <div style="display:flex;gap:20px;">
         <a href="#" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.65)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Privacy Policy</a>
         <a href="#" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.65)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Terms of Service</a>

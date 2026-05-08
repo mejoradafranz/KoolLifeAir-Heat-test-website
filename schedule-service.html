@@ -67,16 +67,16 @@
     <!-- Form -->
     <div class="form-card">
       <div class="section-label" style="margin-bottom:20px">APPOINTMENT REQUEST</div>
-      <form onsubmit="handleSubmit(event)">
+      <form id="schedule-form" onsubmit="submitForm(event,'schedule-form','success-msg','submit-btn')">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
-          <div><label>FIRST NAME</label><input type="text" placeholder="John" required /></div>
-          <div><label>LAST NAME</label><input type="text" placeholder="Smith" required /></div>
+          <div><label>FIRST NAME</label><input type="text" name="first_name" placeholder="John" required /></div>
+          <div><label>LAST NAME</label><input type="text" name="last_name" placeholder="Smith" required /></div>
         </div>
-        <div style="margin-bottom:16px"><label>PHONE NUMBER</label><input type="tel" placeholder="(555) 000-0000" required /></div>
-        <div style="margin-bottom:16px"><label>EMAIL ADDRESS</label><input type="email" placeholder="you@email.com" /></div>
+        <div style="margin-bottom:16px"><label>PHONE NUMBER</label><input type="tel" name="phone" placeholder="(555) 000-0000" required /></div>
+        <div style="margin-bottom:16px"><label>EMAIL ADDRESS</label><input type="email" name="email" placeholder="you@email.com" /></div>
         <div style="margin-bottom:16px">
           <label>SERVICE TYPE</label>
-          <select required>
+          <select name="service" required>
             <option value="">Select a service…</option>
             <option>AC Repair</option>
             <option>AC Installation / Replacement</option>
@@ -91,10 +91,10 @@
           </select>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
-          <div><label>PREFERRED DATE</label><input type="date" /></div>
+          <div><label>PREFERRED DATE</label><input type="date" name="preferred_date" /></div>
           <div>
             <label>PREFERRED TIME</label>
-            <select>
+            <select name="preferred_time">
               <option>Morning (8am–12pm)</option>
               <option>Afternoon (12pm–5pm)</option>
               <option>Evening (5pm–8pm)</option>
@@ -102,7 +102,7 @@
             </select>
           </div>
         </div>
-        <div style="margin-bottom:24px"><label>DESCRIBE YOUR ISSUE (OPTIONAL)</label><textarea rows="4" placeholder="Tell us what's going on with your system…"></textarea></div>
+        <div style="margin-bottom:24px"><label>DESCRIBE YOUR ISSUE (OPTIONAL)</label><textarea name="message" rows="4" placeholder="Tell us what's going on with your system…"></textarea></div>
         <button type="submit" class="btn-primary" id="submit-btn">Schedule My Service →</button>
         <p style="font-size:12px;color:rgba(255,255,255,0.3);text-align:center;margin-top:14px">We'll confirm your appointment within 1 hour during business hours.</p>
       </form>
@@ -144,13 +144,27 @@
 </section>
 
 <script>
-function handleSubmit(e){
+function submitForm(e, formId, successId, btnId) {
   e.preventDefault();
-  document.getElementById('submit-btn').textContent='Sending…';
-  setTimeout(()=>{
-    e.target.style.display='none';
-    document.getElementById('success-msg').style.display='block';
-  },800);
+  var btn = document.getElementById(btnId);
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  fetch('https://formspree.io/f/meenrojv', {
+    method: 'POST',
+    body: new FormData(document.getElementById(formId)),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r) {
+    if (r.ok) {
+      document.getElementById(formId).style.display = 'none';
+      document.getElementById(successId).style.display = 'block';
+    } else {
+      btn.textContent = 'Error — Try Again';
+      btn.disabled = false;
+    }
+  }).catch(function() {
+    btn.textContent = 'Error — Try Again';
+    btn.disabled = false;
+  });
 }
 </script>
 <div id="site-footer"></div>
