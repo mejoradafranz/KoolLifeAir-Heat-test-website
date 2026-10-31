@@ -69,6 +69,8 @@
     <div class="form-card">
       <div class="section-label" style="margin-bottom:20px">APPOINTMENT REQUEST</div>
       <form id="schedule-form" onsubmit="submitForm(event,'schedule-form','success-msg','submit-btn')">
+        <!-- Spam honeypot: Formspree drops submissions that fill this in -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
           <div><label>FIRST NAME</label><input type="text" name="first_name" placeholder="John" required /></div>
           <div><label>LAST NAME</label><input type="text" name="last_name" placeholder="Smith" required /></div>

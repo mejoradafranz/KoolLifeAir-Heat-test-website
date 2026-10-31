@@ -5,42 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kool Life Air & Heat — Comfort All Year Round</title>
   <meta name="description" content="Kool Life Air &amp; Heat is Orlando's trusted HVAC company. AC installation, repair, heating, indoor air quality and maintenance plans. Call (689) 378-0460." />
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            lime: {
-              400: '#8FE824',
-              500: '#78D800',
-              600: '#62B800',
-            },
-            brand: {
-              green: '#78E205',
-              red: '#D93B3B',
-              ice: '#6EC6F5',
-              dark: '#1A1F18',
-              surface: '#242B20',
-              elevated: '#181C18',
-              border: '#242824',
-            },
-          },
-          fontFamily: {
-            display: ['Bebas Neue', 'sans-serif'],
-            body: ['Inter', 'sans-serif'],
-          },
-          letterSpacing: {
-            tightest: '-0.04em',
-          },
-        }
-      }
-    }
-  </script>
   <style>
+    /* Base reset (replaces the Tailwind CDN preflight this page used to load) */
+    *,::before,::after{box-sizing:border-box;border:0 solid #e5e7eb}
+    html{line-height:1.5;-webkit-text-size-adjust:100%;tab-size:4}
+    body{margin:0;line-height:inherit}
+    h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}
+    a{color:inherit;text-decoration:inherit}
+    b,strong{font-weight:bolder}
+    button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}
+    button,[type=button],[type=submit]{-webkit-appearance:button;background-color:transparent;background-image:none}
+    blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre{margin:0}
+    ol,ul{list-style:none;margin:0;padding:0}
+    textarea{resize:vertical}
+    input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
+    button{cursor:pointer}
+    img,svg,video,canvas,audio,iframe,embed,object{display:block;vertical-align:middle}
+    img,video{max-width:100%;height:auto}
+    [hidden]{display:none}
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background: #1A1F18; color: #fff; overflow-x: hidden; }
@@ -981,6 +966,8 @@
         <!-- Right: Form -->
         <div class="fade-up">
           <form id="quote-form" style="display:flex;flex-direction:column;gap:16px;" onsubmit="handleSubmit(event)">
+            <!-- Spam honeypot: Formspree drops submissions that fill this in -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
               <div>
                 <label style="display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);letter-spacing:0.06em;margin-bottom:8px;">FIRST NAME</label>

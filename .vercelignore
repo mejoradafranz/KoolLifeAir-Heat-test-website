@@ -1,0 +1,11 @@
+# Keep local tooling and internal files off the live site
+.claude
+.git
+.gitignore
+.vercelignore
+CLAUDE WEB DESIGN.md
+temporary screenshots
+node_modules
+*.mjs
+*.bat
+BRAND_ASSETS/_C__Users_HOME_Downloads_CAS-Brand-Guidelines-Poster.html.png

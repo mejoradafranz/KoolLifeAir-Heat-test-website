@@ -146,6 +146,8 @@
         <h2>Drop Us a Line</h2>
         <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:32px">Use this form for non-urgent inquiries. For same-day service or emergencies, please call us directly.</p>
         <form id="contact-form" onsubmit="submitForm(event,'contact-form','contact-success','contact-btn')">
+          <!-- Spam honeypot: Formspree drops submissions that fill this in -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
           <div class="form-group">
             <label>Full Name</label>
             <input type="text" name="name" placeholder="Jane Smith" required />
