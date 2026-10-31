@@ -82,6 +82,7 @@
     font-family: Inter, sans-serif; font-size: 13.5px; font-weight: 700;
     color: #78E205; text-decoration: none;
     transition: opacity 0.2s ease;
+    white-space: nowrap;
   }
   .kl-phone:hover { opacity: 0.8; }
   .kl-btn {
@@ -121,7 +122,7 @@
   .kl-mobile-cta { padding: 16px 24px 24px; display: flex; flex-direction: column; gap: 10px; }
   .kl-mobile-cta .kl-btn { text-align: center; padding: 14px; font-size: 15px; }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1279px) {
     .kl-links, .kl-cta { display: none; }
     .kl-hamburger { display: flex; }
     .kl-mobile-menu { display: flex; }
@@ -196,7 +197,7 @@
     </ul>
 
     <div class="kl-cta">
-      <a href="tel:+13212076757" class="kl-phone">321-207-6757</a>
+      <a href="tel:+16893780460" class="kl-phone">(689) 378-0460</a>
       <a href="/schedule-service.html" class="kl-btn">Schedule Service</a>
     </div>
 
@@ -260,7 +261,7 @@
       </li>
     </ul>
     <div class="kl-mobile-cta">
-      <a href="tel:+13212076757" class="kl-phone" style="font-size:17px;">321-207-6757</a>
+      <a href="tel:+16893780460" class="kl-phone" style="font-size:17px;">(689) 378-0460</a>
       <a href="/schedule-service.html" class="kl-btn">Schedule Service</a>
     </div>
   </div>
@@ -339,7 +340,7 @@
       <div>
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.3);letter-spacing:0.1em;margin-bottom:18px;">CONTACT</div>
         <div style="display:flex;flex-direction:column;gap:12px;">
-          <a href="tel:+13212076757" style="font-size:14px;font-weight:700;color:#78E205;text-decoration:none;">321-207-6757</a>
+          <a href="tel:+16893780460" style="font-size:14px;font-weight:700;color:#78E205;text-decoration:none;">(689) 378-0460</a>
           <a href="mailto:koollifeairheat@gmail.com" style="font-size:13px;color:rgba(255,255,255,0.65);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#78E205'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">koollifeairheat@gmail.com</a>
           <span style="font-size:13px;color:rgba(255,255,255,0.4);">Orlando, FL &amp; Surrounding Areas</span>
           <a href="/schedule-service.html" style="display:inline-block;background:#78E205;color:#1A1F18;font-size:13px;font-weight:700;padding:10px 18px;border-radius:8px;text-decoration:none;text-align:center;margin-top:4px;">Schedule Service</a>
@@ -348,7 +349,7 @@
     </div>
     <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(120,226,5,0.25) 30%,rgba(120,226,5,0.25) 70%,transparent);margin-bottom:24px;"></div>
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-      <p style="font-size:12px;color:rgba(255,255,255,0.2);margin:0;">© 2026 Kool Life Air &amp; Heat. All rights reserved. &nbsp;·&nbsp; v 1.0.1g</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.2);margin:0;">© 2026 Kool Life Air &amp; Heat. All rights reserved. &nbsp;·&nbsp; v 1.0.1h</p>
       <div style="display:flex;gap:20px;">
         <a href="/privacy-policy.html" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.65)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Privacy Policy</a>
         <a href="/terms-of-service.html" style="font-size:12px;color:rgba(255,255,255,0.2);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.65)'" onmouseout="this.style.color='rgba(255,255,255,0.2)'">Terms of Service</a>
